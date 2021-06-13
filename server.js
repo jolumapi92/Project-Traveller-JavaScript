@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
 
-// Connecting to the Data Base ////////////
+//////////////////DATABASE///////////////////////////////////
 
 mongoose.connect(process.env.DATABASE,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
@@ -19,7 +19,14 @@ db.on('error', (err) => {
 db.once('open', () => {
   console.log('Connection successful: Your app is now connected to the Data Base')
 })
-//////////////////DATABASE///////////////////////////////////
+
+// ////////////Middlewares/////////////////////////////////
+
+// Parses the object coming as a request
+
+
+app.use(express.json())
+app.use(cookieParser());
 
 
 // ///////////////////////Routes for the application/////////////////////
