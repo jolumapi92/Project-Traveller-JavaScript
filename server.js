@@ -21,8 +21,11 @@ db.once('open', () => {
 })
 //////////////////DATABASE///////////////////////////////////
 
+
+// ///////////////////////Routes for the application/////////////////////
+
 app.get('/', (req, res) => {
-  res.json({app: 'your app has been created succesfully'})
+  res.json({app: 'your app has been created succesfully', DataBase: 'The connection to the DataBase has also been established'})
 })
 
 app.listen(PORT)
