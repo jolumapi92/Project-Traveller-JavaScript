@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
@@ -24,16 +25,14 @@ db.once('open', () => {
 
 // Parses the object coming as a request
 
-
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json())
 app.use(cookieParser());
 
 
 // ///////////////////////Routes for the application/////////////////////
-
-app.get('/', (req, res) => {
-  res.json({app: 'your app has been created succesfully', DataBase: 'The connection to the DataBase has also been established'})
-})
+const routerActivities = require('./Router/activities');
+app.use(routerActivities);
 
 app.listen(PORT)
 
