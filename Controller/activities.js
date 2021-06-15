@@ -20,3 +20,16 @@ module.exports.getOneActivity = async (req, res) => {
     
      
 }
+
+module.exports.postOneActivity = async (req, res) => {
+    const { name, location, category, description  } = req.body
+
+    try {
+        const activity = await Activity.create({name: name, location: location, category: category, description: description});
+        res.status(201).json({Activity: `The activity has been succesfully created`})
+    } catch (error) {
+        res.status(400).json('Unable to save this particular data')
+    }
+    
+     
+}

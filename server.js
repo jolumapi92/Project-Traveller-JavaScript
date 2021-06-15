@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
@@ -26,6 +27,7 @@ db.once('open', () => {
 // Parses the object coming as a request
 
 app.use(cors({ origin: true, credentials: true }));
+app.use(bodyParser.json());
 app.use(express.json())
 app.use(cookieParser());
 
@@ -33,6 +35,9 @@ app.use(cookieParser());
 // ///////////////////////Routes for the application/////////////////////
 const routerActivities = require('./Router/activities');
 app.use(routerActivities);
+
+const routerUsers = require('./Router/users');
+app.use(routerUsers);
 
 app.listen(PORT)
 
