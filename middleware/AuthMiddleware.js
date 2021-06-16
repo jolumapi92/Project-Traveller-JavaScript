@@ -16,7 +16,7 @@ const requireAuth = (req, res, next) => {
     })
   }
   else {
-    res.json({ user: 'The user needs to be logged in' });
+    res.status(403).json({notification: "You need to be logged in" });
   }
 };
 

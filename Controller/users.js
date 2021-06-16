@@ -22,6 +22,7 @@ module.exports.postSignUp = async (req, res) => {
 };
 
 module.exports.postLogin = async (req, res) => {
+  console.log( req.body );
   const { email, password, username } = req.body;
 
   try {
@@ -38,5 +39,25 @@ module.exports.postLogin = async (req, res) => {
 module.exports.getLogout = async (req, res) => {
     res.cookie('traveller', '', { maxAge: 1 });
     res.json({Action: "You have succesfully logout, we hope to see you again soon"});
+}
+
+module.exports.cookie = async (req, res) => {
+  const token = req.cookies.traveller;
+
+  if(token){
+    jwt.verify(token, 'papichulo', async (err, decodedToken)=> {
+      if(err){
+        console.log(err)
+      }
+      else {
+        let userFound = await User.findById(decodedToken.id);
+        console.log(userFound);
+        res.json({ user: userFound.username })
+      }
+    })
+  }
+  else {
+    res.status(400);
+  }
 }
 

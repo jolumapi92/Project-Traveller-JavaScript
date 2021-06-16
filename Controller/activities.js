@@ -33,3 +33,14 @@ module.exports.postOneActivity = async (req, res) => {
     
      
 }
+
+module.exports.deleteOneActivity = async (req, res) => {
+    const id = req.params.id
+    Activity.findByIdAndDelete(id)
+    .then( (result) => { 
+        res.json({ response: 'Succesfully deleted an activity' })
+     })
+     .catch( (error) => {
+         res.status(404).json({ response: 'The user was not found' })
+     })
+}
