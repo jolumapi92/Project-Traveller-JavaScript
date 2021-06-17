@@ -39,6 +39,9 @@ app.use(routerActivities);
 const routerUsers = require('./Router/users');
 app.use(routerUsers);
 
+const routerTravellers = require('./Router/travellers');
+app.use(routerTravellers);
+
 app.listen(PORT)
 
 console.log(`Your app is up and running and listening on port: ${PORT}`)
