@@ -44,4 +44,8 @@ app.use(routerTravellers);
 
 app.listen(PORT)
 
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'))
+}
+
 console.log(`Your app is up and running and listening on port: ${PORT}`)
