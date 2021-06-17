@@ -3,7 +3,7 @@ const controller = require('../Controller/travellers');
 
 
 
-// router.post('/travellerLogin');
+router.post('/travellerLogin', controller.loginTraveller);
 router.post('/travellerSignUp', controller.signUpTraveller);
 // router.get('/travellerLogout');
 // router.get('/getCookie');
