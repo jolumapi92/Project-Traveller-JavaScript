@@ -52,7 +52,7 @@ module.exports.cookie = async (req, res) => {
       else {
         let userFound = await User.findById(decodedToken.id);
         console.log(userFound);
-        res.json({ user: userFound.username })
+        res.json({ user: userFound.username, admin: true })
       }
     })
   }

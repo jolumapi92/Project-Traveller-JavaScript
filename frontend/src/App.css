@@ -73,9 +73,16 @@ a {
 }
 
 .form-login {
+  display: flex;
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 4em;
   border-radius: 5px;
+}
+
+.form-login a {
+  margin-top: 30px;
+  color: black;
 }
 
 .card-activity {
@@ -88,4 +95,8 @@ a {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 8px;
   margin: 10px 0;
+}
+
+.btn-concierge {
+  color: black;
 }

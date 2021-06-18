@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 
-
-const LoginForm = () => {
+const LoginTraveller = () => {
 
     const [ email, setEmailLog ] = useState('');
     const [ keyword, setPasswordLog ] = useState('');
@@ -22,7 +21,7 @@ const LoginForm = () => {
                     password: keyword
                 },
                 withCredentials: true,
-                url: '/userLogin',
+                url: '/travellerLogin',
             }).then( res => {
                 const data = res.data
                 if(data){
@@ -35,9 +34,11 @@ const LoginForm = () => {
         }
     }
 
+
+
     return ( 
         <div className="login-component">
-            <h1 className="mb-4">Concierge</h1>
+            <h1 className="mb-4">Traveller</h1>
             <div className="form-login">
                 <h1 className="mb-5">Log in</h1>
                 <div>
@@ -46,11 +47,12 @@ const LoginForm = () => {
                 <div>
                     <input className="box-input" type="password" placeholder="password" onChange={ event => setPasswordLog(event.target.value) }/>
                 </div>
-                <button className="btn btn-warning mt-5" onClick={login}>Iniciar</button>
-                <Link className="btn btn-primary" to="/travellerLogin">Traveller</Link>
+                <button className="btn btn-primary mt-5" onClick={login}>Iniciar</button>
+                <Link className="btn btn-warning" to="/login">Concierge</Link>
             </div>
         </div>
      );
 }
  
-export default LoginForm;
+export default LoginTraveller
+;

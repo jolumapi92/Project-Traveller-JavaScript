@@ -5,6 +5,7 @@ import LoginForm from './components/loginForm';
 import Home from './components/home';
 import OneActivity from './components/oneActivity';
 import CreateActivity from './components/newActivity';
+import LoginTraveller from './components/loginTraveller';
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/createActivity">
               <CreateActivity />
+            </Route>
+            <Route exact path="/travellerLogin">
+              <LoginTraveller />
             </Route>
           </Switch>
         </div>
