@@ -31,7 +31,6 @@ module.exports.postLogin = async (req, res) => {
     res.cookie('traveller', token, { httpOnly: true, maxAge: maxAge * 3000 })
     res.status(200).json({ user: user._id })
   } catch(e) {
-    console.log(e);
     res.status(400).json({ e })
   }
 }

@@ -7,16 +7,20 @@ const Navbar = () => {
     const history = useHistory();
     const [user,  setUser] = useState(null);
     const [traveller, setTraveller] = useState(null);
+    const [loading, setLoading] = useState(null);
 
     useEffect(() => {
         try {
+            setLoading('loading....')
             axios({
                 method: "GET",
                 url: "/cookie"
             })
             .then( res => {
                 console.log(res.data);
+
                 if(res.data.admin === true){
+                    setLoading(null);
                     setUser(res.data);
                 }
             })
@@ -32,6 +36,7 @@ const Navbar = () => {
             .then( res => {
                 console.log(res.data);
                 if(res.data.admin === false){
+                    setLoading(null);
                     setTraveller(res.data);
                 }
             })
@@ -70,6 +75,7 @@ const Navbar = () => {
                 <Link to="/"><h4>Concierge Traveller</h4></Link>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto">
+                        { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
                         { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">Crear Actividad</button></Link>}
