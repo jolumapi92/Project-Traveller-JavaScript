@@ -73,8 +73,8 @@ const Navbar = () => {
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
                         { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">Crear Actividad</button></Link>}
-                        { user && <a onClick={deleteSession} ><button className="btn btn-warning">Logout</button></a> }
-                        { traveller && <a onClick={deleteSessionTraveller} ><button className="btn btn-warning">Logout</button></a> }
+                        { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
+                        { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-warning">Logout</button> }
                     </ul>
                 </div>
             </div>
