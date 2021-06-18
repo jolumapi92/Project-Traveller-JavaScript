@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -39,6 +43,7 @@
 
 .home-component {
   flex-direction: column;
+  background-color: #F7E185;
 }
 
 a {
@@ -86,6 +91,7 @@ a {
 }
 
 .card-activity {
+  background-color: white;
   height: 150px;
   width: 150px;
   display: flex;
@@ -99,4 +105,44 @@ a {
 
 .btn-concierge {
   color: black;
+}
+
+.new-booking-form {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 9px;
+  background-color: white;
+}
+
+.new-booking-form select {
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px 0;
+  outline: #F7E185;
+}
+
+.main-form-section {
+  flex-direction: column;
+  background-color: #F7E185;
+}
+
+.form-new-bookin {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-new-bookin > * {
+  margin: 10px;
+  border-radius: 9px;
+  border: none;
+  height: 3em;
+  outline: none;
+}
+
+.multiple-selection-travell {
+  height: 300px;
+}
+
+#mainNav {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

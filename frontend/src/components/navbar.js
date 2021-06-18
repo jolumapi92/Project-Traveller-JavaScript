@@ -18,14 +18,13 @@ const Navbar = () => {
             })
             .then( res => {
                 console.log(res.data);
-
                 if(res.data.admin === true){
                     setLoading(null);
-                    setUser(res.data);
+                    setUser(res.data.user);
                 }
-            })
+            }).catch( () => { setLoading(null); } )
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
         try {
@@ -34,14 +33,14 @@ const Navbar = () => {
                 url: "/getCookie"
             })
             .then( res => {
-                console.log(res.data);
+                console.log(res.data.user);
                 if(res.data.admin === false){
                     setLoading(null);
-                    setTraveller(res.data);
+                    setTraveller(res.data.user)
                 }
-            })
+            }).catch( () => { setLoading(null); } )
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
 
@@ -54,6 +53,7 @@ const Navbar = () => {
             url: '/logOut',
          }).then( () => {
             setUser(null)
+            setLoading(null)
             history.push('/');
          });
     }
@@ -64,21 +64,24 @@ const Navbar = () => {
             withCredentials: true,
             url: '/logoutTraveler',
          }).then( () => {
-            setTraveller(null)
+            setTraveller(null);
+            setLoading(null);
             history.push('/');
          });
     }
 
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <nav className="navbar navbar-expand-lg navbar-light py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
-                <Link to="/"><h4>Concierge Traveller</h4></Link>
+                { !user && !traveller && <Link to="/"><h4>Concierge Traveller</h4></Link> }
+                { user && <Link to="/"><h4>Concierge Traveller: { user } </h4></Link> }
+                { traveller && <Link to="/"><h4>Concierge Traveller: { traveller } </h4></Link> }
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto">
                         { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
                         { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
-                        { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">Crear Actividad</button></Link>}
+                        { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">New Activity</button></Link>}
                         { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
                         { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-warning">Logout</button> }
                     </ul>

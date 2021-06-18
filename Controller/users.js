@@ -56,7 +56,7 @@ module.exports.cookie = async (req, res) => {
     })
   }
   else {
-    res.status(400);
+    res.status(404).json({ notification: 'user not found' });
   }
 }
 
