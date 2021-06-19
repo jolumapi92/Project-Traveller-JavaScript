@@ -1,8 +1,10 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+// import useFetch from './useFetch'
 
-const Navbar = () => {
+const Navbar = ({ events }) => {   
+    // const { data: events , loading, error } = useFetch('/events');
 
     const history = useHistory();
     const [user,  setUser] = useState(null);
@@ -78,9 +80,10 @@ const Navbar = () => {
                     <ul className="navbar-nav ms-auto">
                         { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
-                        { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
+                        { traveller && <Link to="/bookings" ><button className="btn btn-warning">Book</button></Link> }
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">New Activity</button></Link>}
                         { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
+                        { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-warning mx-3">My bookings</button></Link> }
                         { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-warning">Logout</button> }
                     </ul>
                 </div>

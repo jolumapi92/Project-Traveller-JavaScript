@@ -7,13 +7,17 @@ import OneActivity from './components/oneActivity';
 import CreateActivity from './components/newActivity';
 import LoginTraveller from './components/loginTraveller';
 import NewBooking from './components/newBooking';
+import AllBookings from './components/allBookings';
+import useFetch from './components/useFetch';
 
 
 function App() {
+  const { data: events , loading, error } = useFetch('/events');
+  
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar events={events} />
         <div className="main-content">
           <Switch>
             <Route exact path="/login">
@@ -33,6 +37,9 @@ function App() {
             </Route>
             <Route exact path="/bookings">
               <NewBooking/>
+            </Route>
+            <Route exact path="/Allbookings">
+              <AllBookings events={events} loading={loading} error={error} />
             </Route>
           </Switch>
         </div>

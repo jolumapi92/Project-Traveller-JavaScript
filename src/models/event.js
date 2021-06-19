@@ -8,8 +8,8 @@ const eventSchema = new Schema({
         required: true
     },
     agent: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     number: {
         type: Number,
