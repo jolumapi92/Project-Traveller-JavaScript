@@ -18,7 +18,7 @@ const NewBooking = () => {
             body: JSON.stringify(booking)
         }).then( () => {
             console.log('New booking added');
-            history.push('/')
+            history.push('/Allbookings')
         }).catch((err)=> {
             console.log(err)
         })

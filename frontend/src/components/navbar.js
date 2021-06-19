@@ -12,7 +12,7 @@ const Navbar = () => {
     const [loading, setLoading] = useState(null);
 
     useEffect(() => {
-        try {
+        
             setLoading('loading....')
             axios({
                 method: "GET",
@@ -24,11 +24,9 @@ const Navbar = () => {
                     setUser(res.data.user);
                 }
             }).catch( () => { setLoading(null); } )
-        } catch (error) {
-            console.log(error);
-        }
+        
 
-        try {
+        
             axios({
                 method: "GET",
                 url: "/getCookie"
@@ -39,9 +37,7 @@ const Navbar = () => {
                     setTraveller(res.data.user)
                 }
             }).catch( () => { setLoading(null); } )
-        } catch (error) {
-            console.log(error);
-        }
+        
 
 
     }, []);

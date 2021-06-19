@@ -20,7 +20,14 @@ const useFetch = (url) => {
             console.log(res.data);
         })
         .catch( err => {
-            redirect.push('/login')
+            console.log(err.message)
+            redirect.push('/travellerLogin')
+            // if(err.message.includes('400') || err.message.includes('500')){
+            //     setLoading(null)
+            //     setError('Awkward....this should not happen. Try reloading or check your internet connection.')
+            // } else if(err.message.includes('403')) {
+            //     console.log('Te quiero')
+            // }
         })
     }, [url])
 
