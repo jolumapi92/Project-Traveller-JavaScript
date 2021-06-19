@@ -42,6 +42,9 @@ app.use(routerUsers);
 const routerTravellers = require('./Router/travellers');
 app.use(routerTravellers);
 
+const routerEvents = require('./Router/events');
+app.use(routerEvents);
+
 app.listen(PORT)
 
 if(process.env.NODE_ENV === 'production') {
