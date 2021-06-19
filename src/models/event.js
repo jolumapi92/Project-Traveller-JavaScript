@@ -16,7 +16,7 @@ const eventSchema = new Schema({
         required: true
     },
     traveller: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Traveller'
     }
     }, { 

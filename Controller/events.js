@@ -15,8 +15,9 @@ module.exports.postEvent = async (req, res) => {
             else {
                 let user = await Traveller.findById(decodedToken.id);
                 let idUser = user._id
+                console.log(idUser);
                 try {
-                    const event = await Event.create({location, agent, number, idUser})
+                    const event = await Event.create({location: location, agent: agent, number: number, traveller: { _id: idUser }});
                     console.log(event);
                     res.status(201).json({ notification: event });
                 } catch (error) {
