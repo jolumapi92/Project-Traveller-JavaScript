@@ -17,7 +17,6 @@ const Navbar = () => {
                 url: "/cookie"
             })
             .then( res => {
-                console.log(res.data);
                 if(res.data.admin === true){
                     setLoading(null);
                     setUser(res.data.user);
@@ -33,7 +32,6 @@ const Navbar = () => {
                 url: "/getCookie"
             })
             .then( res => {
-                console.log(res.data.user);
                 if(res.data.admin === false){
                     setLoading(null);
                     setTraveller(res.data.user)
