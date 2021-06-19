@@ -1,6 +1,8 @@
+import useFetch from './useFetch';
 
 
-const AllBookings = ({events, loading, error}) => {
+const AllBookings = () => {
+    const { data: events , loading, error } = useFetch('/events');
 
 
     return ( 

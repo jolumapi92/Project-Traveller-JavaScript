@@ -9,8 +9,11 @@ const OneActivity = () => {
     const handleDelete = () => {
         fetch('/activities/'+ id, {
             method: "DELETE"
-        }).then(() => {
-            history.push('/');
+        }).then((response) => response.json()).then( data => {
+            console.log(data.notification);
+            if(data.notification === 'You need to be logged in'){
+                history.push('/login');
+            }
         })
     }
     

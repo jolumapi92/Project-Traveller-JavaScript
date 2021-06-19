@@ -1,10 +1,10 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-// import useFetch from './useFetch'
+import useFetch from './useFetch'
 
-const Navbar = ({ events }) => {   
-    // const { data: events , loading, error } = useFetch('/events');
+const Navbar = () => {   
+    const { data: events } = useFetch('/events');
 
     const history = useHistory();
     const [user,  setUser] = useState(null);

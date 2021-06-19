@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 
 const useFetch = (url) => {
-    const history = useHistory();
+    const redirect = useHistory();
+
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
@@ -19,9 +20,7 @@ const useFetch = (url) => {
             console.log(res.data);
         })
         .catch( err => {
-            // setLoading(false)
-            // setError('An error has occured. Please login or check your internet status');
-            history.push('/login')
+            redirect.push('/login')
         })
     }, [url])
 
