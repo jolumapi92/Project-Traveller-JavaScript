@@ -166,3 +166,7 @@ a {
   height: 150px;
 }
 
+.card-event > * {
+  margin: 0;
+}
+
