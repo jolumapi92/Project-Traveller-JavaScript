@@ -1,4 +1,3 @@
-mongoose = require('mongoose');
 const Activity = require('../src/models/activity');
 
 module.exports.getAllActivities = async (req, res) => {

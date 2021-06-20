@@ -1,10 +1,8 @@
-const router = require('./users');
-
 const eventRouter = require('express').Router();
 const controller = require('../Controller/events');
 
-router.post('/postEventTraveller', controller.postEvent);
-router.get('/events', controller.getAllEvents);
-router.get('/eventsAgent', controller.getAllEventsAgent);
+eventRouter.post('/postEventTraveller', controller.postEvent);
+eventRouter.get('/events', controller.getAllEvents);
+eventRouter.get('/eventsAgent', controller.getAllEventsAgent);
 
-module.exports = router;
+module.exports = eventRouter;

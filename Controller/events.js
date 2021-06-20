@@ -1,4 +1,3 @@
-mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const Event = require('../src/models/event');
 const Traveller = require('../src/models/traveller');
@@ -6,7 +5,7 @@ const User = require('../src/models/user');
 
 module.exports.postEvent = async (req, res) => {
     const token = req.cookies.travellerConcierge;
-    const { location, agent, number } = req.body
+    const { location, agent, number } = req.body;
 
     if(token){
         jwt.verify(token, 'papichulo', async (err, decodedToken) =>{
