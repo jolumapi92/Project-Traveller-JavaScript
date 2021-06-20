@@ -20,7 +20,11 @@ const Navbar = () => {
                 url: "/cookie"
             })
             .then( res => {
-                if(res.data.admin === true){
+                if(res.data.notification === 'user not found'){
+                    setLoading(null);
+                    setUser(null)
+                } else if(res.data.admin === true)
+                {
                     setLoading(null);
                     setUser(res.data.user);
                 }
@@ -36,10 +40,13 @@ const Navbar = () => {
                 url: "/getCookie"
             })
             .then( res => {
-                if(res.data.admin === false){
+                if(res.data.notification === 'user not found'){
+                    setTraveller(null);
+                } else if(res.data.admin === false) {
                     setLoading(null);
                     setTraveller(res.data.user)
                 }
+                
             }).catch( (err) => { 
                 setLoading(null);
                 console.log(err.response)
