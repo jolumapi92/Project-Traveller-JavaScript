@@ -2,6 +2,7 @@ mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const Event = require('../src/models/event');
 const Traveller = require('../src/models/traveller');
+const User = require('../src/models/user');
 
 module.exports.postEvent = async (req, res) => {
     const token = req.cookies.travellerConcierge;
@@ -49,6 +50,28 @@ module.exports.getAllEvents = async (req, res) => {
         })
     }
     else {
-        res.status(403).json({ notification: 'user not found' });
+        res.status(401).json({ notification: 'user not found' });
+    }
+}
+
+module.exports.getAllEventsAgent = async (req, res) => {
+    const token = req.cookies.traveller;
+
+    if(token){
+        jwt.verify(token, 'papichulo', async (err, decodedToken) =>{
+            if(err){
+                console.log(err)
+            }
+            else {
+                let user = await User.findById(decodedToken.id);
+                let idUser = user._id
+                let events = await Event.find({ agent: idUser }).populate('traveller', 'name');
+                console.log(events)
+                res.status(200).json(events);
+            }
+        })
+    }
+    else {
+        res.status(401).json({ notification: 'user not found' });
     }
 }

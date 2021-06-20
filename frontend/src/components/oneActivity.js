@@ -26,7 +26,7 @@ const OneActivity = () => {
             { activity && <p> {activity.description} </p> }
             { error && <p> {error} </p>  }
 
-            <button className="btn btn-danger" onClick={ handleDelete } > Borrar Actividad </button>
+            { !error && <button className="btn btn-danger" onClick={ handleDelete } > Borrar Actividad </button> }
         </div>
      );
 }

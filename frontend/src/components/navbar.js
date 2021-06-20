@@ -5,6 +5,7 @@ import useFetch from './useFetch'
 
 const Navbar = () => {   
     const { data: events } = useFetch('/events');
+    const { data: agentEvents } = useFetch('/eventsAgent');
 
     const history = useHistory();
     const [user,  setUser] = useState(null);
@@ -23,7 +24,10 @@ const Navbar = () => {
                     setLoading(null);
                     setUser(res.data.user);
                 }
-            }).catch( () => { setLoading(null); } )
+            }).catch( (err) => {
+                 setLoading(null);
+                 console.log(err.response)
+                })
         
 
         
@@ -36,7 +40,10 @@ const Navbar = () => {
                     setLoading(null);
                     setTraveller(res.data.user)
                 }
-            }).catch( () => { setLoading(null); } )
+            }).catch( (err) => { 
+                setLoading(null);
+                console.log(err.response)
+            })
         
 
 
@@ -78,6 +85,7 @@ const Navbar = () => {
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
                         { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-warning ">My bookings</button></Link> }
                         { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
+                        { user && agentEvents && <Link to="/AllbookingsAgents" ><button className="btn btn-warning">Appointments</button></Link>}
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">New Activity</button></Link>}
                         { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
                         { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-warning">Logout</button> }

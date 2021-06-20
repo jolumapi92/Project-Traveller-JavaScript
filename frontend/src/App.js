@@ -8,6 +8,7 @@ import CreateActivity from './components/newActivity';
 import LoginTraveller from './components/loginTraveller';
 import NewBooking from './components/newBooking';
 import AllBookings from './components/allBookings';
+import AllApointments from './components/allApointments';
 
 function App() {
   
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/Allbookings">
               <AllBookings />
+            </Route>
+            <Route exact path="/AllbookingsAgents">
+              <AllApointments />
             </Route>
           </Switch>
         </div>
