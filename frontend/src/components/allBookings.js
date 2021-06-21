@@ -1,4 +1,5 @@
 import useFetch from './useFetch';
+import { Link } from 'react-router-dom'; 
 
 
 const AllBookings = () => {
@@ -8,7 +9,7 @@ const AllBookings = () => {
     return ( 
         <section className="p-5 d-flex align-items-center justify-content-center main-form-section">
             { loading && loading }
-            { events && events.map( element => { return <div className="col-10 card-event my-5"> <p> Location: {element.location} </p> <p> Agent: {element.agent.username}</p> <p> Members: {element.number}</p></div>} ) }
+            { events && events.map( element => { return <Link to={`/Allbookings/${element._id}`}><div className="col-10 card-event my-5"> <p> Location: {element.location} </p> <p> Agent: {element.agent.username}</p> <p> Members: {element.number}</p></div></Link>} ) }
             { error && error }
         </section>
      );

@@ -51,13 +51,7 @@ a {
   color: black;
 }
 
-.one-activity-component {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 
 .login-component {
   height: 100vh;
@@ -168,5 +162,24 @@ a {
 
 .card-event > * {
   margin: 0;
+}
+
+.one-activity-component {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.side-bar-activities {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

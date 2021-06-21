@@ -53,6 +53,29 @@ module.exports.getAllEvents = async (req, res) => {
     }
 }
 
+module.exports.getOneEvent = async (req, res) => {
+    const token = req.cookies.travellerConcierge;
+    const id = req.params.id
+
+    if(token){
+        jwt.verify(token, 'papichulo', async (err, decodedToken) =>{
+            if(err){
+                console.log(err)
+            }
+            else {
+                let user = await Traveller.findById(decodedToken.id);
+                let idUser = user._id
+                let event = await Event.findById(id).populate('agent', 'username');
+                console.log(event)
+                res.status(200).json(event);
+            }
+        })
+    }
+    else {
+        res.status(401).json({ notification: 'user not found' });
+    }
+}
+
 module.exports.getAllEventsAgent = async (req, res) => {
     const token = req.cookies.traveller;
 

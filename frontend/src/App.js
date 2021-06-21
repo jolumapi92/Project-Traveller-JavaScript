@@ -9,6 +9,8 @@ import LoginTraveller from './components/loginTraveller';
 import NewBooking from './components/newBooking';
 import AllBookings from './components/allBookings';
 import AllApointments from './components/allApointments';
+import OneBooking from './components/oneBooking';
+import EventActivities from './components/sideBarActivities';
 
 function App() {
   
@@ -41,6 +43,12 @@ function App() {
             </Route>
             <Route exact path="/AllbookingsAgents">
               <AllApointments />
+            </Route>
+            <Route path="/Allbookings/:id">
+              <div className="d-flex justify-content-center align-items-center">
+                  <OneBooking/>
+                  <EventActivities />
+              </div>
             </Route>
           </Switch>
         </div>
