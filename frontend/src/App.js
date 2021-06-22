@@ -11,6 +11,7 @@ import AllBookings from './components/allBookings';
 import AllApointments from './components/allApointments';
 import OneBooking from './components/oneBooking';
 import EventActivities from './components/sideBarActivities';
+import FormBookingEvent from './components/formBookingActivities';
 
 function App() {
   
@@ -49,6 +50,7 @@ function App() {
                   <OneBooking/>
                   <EventActivities />
               </div>
+              <FormBookingEvent />
             </Route>
           </Switch>
         </div>

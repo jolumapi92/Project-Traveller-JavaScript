@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken');
 
 module.exports.postJourney = async (req, res) => {
     const token = req.cookies.travellerConcierge;
-    const { activities, idEvent } = req.body;
+    const { collectedActivities, idEvent } = req.body;
+    console.log( collectedActivities, idEvent );
 
    if(token){
        jwt.verify(token, 'papichulo', async (err, decodedToken)=>{
@@ -15,7 +16,7 @@ module.exports.postJourney = async (req, res) => {
            else {
                 const user = await Traveller.findById(decodedToken.id);
                 try {
-                    const journey = await Journey.create({ event: idEvent, traveller: user, activities:  activities });
+                    const journey = await Journey.create({ event: idEvent, traveller: user, activities:  collectedActivities });
                     console.log(journey);
                     res.status(201).json({ journey: `A new journey has been created${ journey }` });
                 } catch (error) {

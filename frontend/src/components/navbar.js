@@ -90,6 +90,7 @@ const Navbar = () => {
                     <ul className="navbar-nav ms-auto">
                         { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
+                        { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-info mx-3">Journey</button></Link> }
                         { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-warning ">My bookings</button></Link> }
                         { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
                         { user && agentEvents && <Link to="/AllbookingsAgents" ><button className="btn btn-warning">Appointments</button></Link>}
