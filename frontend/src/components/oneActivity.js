@@ -1,5 +1,6 @@
 import useFetch from './useFetch';
 import {  useParams, useHistory } from "react-router-dom";
+import React from 'react';
 
 const OneActivity = () => {
     const history = useHistory();

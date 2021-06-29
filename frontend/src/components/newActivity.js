@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom' 
+import { useHistory } from 'react-router-dom';
+import React from 'react';
 
 const CreateActivity = () => {
     const [name, setName] = useState('');

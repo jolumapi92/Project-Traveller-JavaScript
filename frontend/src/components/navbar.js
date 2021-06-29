@@ -1,7 +1,8 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import useFetch from './useFetch'
+import useFetch from './useFetch';
+import React from 'react';  
 
 const Navbar = () => {   
     const { data: events } = useFetch('/events');

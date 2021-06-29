@@ -12,6 +12,7 @@ import AllApointments from './components/allApointments';
 import OneBooking from './components/oneBooking';
 import EventActivities from './components/sideBarActivities';
 import FormBookingEvent from './components/formBookingActivities';
+import React, { Component }  from 'react';
 
 function App() {
   

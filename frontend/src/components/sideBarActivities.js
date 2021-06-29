@@ -1,5 +1,6 @@
 import useFetch from './useFetch';
 import {  useParams, useHistory } from "react-router-dom";
+import React from 'react';
 
 const EventActivities = () => {
     const { id } = useParams();
