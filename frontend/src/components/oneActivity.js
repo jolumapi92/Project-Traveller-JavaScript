@@ -12,10 +12,10 @@ const OneActivity = () => {
             method: "DELETE"
         }).then((response) => {
             console.log(response)
-            return response.json()
+            history.push('/');
         }).then( data => {
             console.log(data);
-            if(data.notification === 'You need to be logged in'){
+            if(data && data.notification === 'You need to be logged in'){
                 history.push('/login');
             }
         })
