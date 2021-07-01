@@ -3,7 +3,7 @@ const Traveller = require('../src/models/traveller');
 
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-    return jwt.sign({ id }, 'papichulo', {
+    return jwt.sign({ id }, process.env.SECRETWORD, {
         expiresIn: maxAge
     });
 }
@@ -43,7 +43,7 @@ module.exports.getCookie = async (req, res) => {
     const token = req.cookies.travellerConcierge;
 
     if(token){
-        jwt.verify(token, 'papichulo', async (err, decodedToken) =>{
+        jwt.verify(token, process.env.SECRETWORD, async (err, decodedToken) =>{
             if(err){
                 console.log(err)
             }

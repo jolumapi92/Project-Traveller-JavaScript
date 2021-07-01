@@ -5,7 +5,7 @@ const requireAuth = (req, res, next) => {
   const token = req.cookies.traveller;
 
   if(token){
-    jwt.verify(token, 'papichulo', (err, decodedToken)=> {
+    jwt.verify(token, process.env.SECRETWORD, (err, decodedToken)=> {
       if(err){
         console.log(err.message);
       }

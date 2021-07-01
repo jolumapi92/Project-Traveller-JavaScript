@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-    return jwt.sign({ id }, 'papichulo', {
+    return jwt.sign({ id }, process.env.SECRETWORD, {
         expiresIn: maxAge
     });
 }
@@ -44,7 +44,7 @@ module.exports.cookie = async (req, res) => {
   const token = req.cookies.traveller;
 
   if(token){
-    jwt.verify(token, 'papichulo', async (err, decodedToken)=> {
+    jwt.verify(token, process.env.SECRETWORD, async (err, decodedToken)=> {
       if(err){
         console.log(err)
       }
