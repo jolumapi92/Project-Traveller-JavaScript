@@ -11,8 +11,10 @@ const OneActivity = () => {
         fetch('/activities/'+ id, {
             method: "DELETE"
         }).then((response) => {
-            console.log(response)
-            history.push('/');
+            if(response.status === 403){
+              return response.json();
+            }
+            // history.push('/');
         }).then( data => {
             console.log(data);
             if(data && data.notification === 'You need to be logged in'){
