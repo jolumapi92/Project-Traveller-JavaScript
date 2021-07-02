@@ -8,10 +8,10 @@ const Home = () => {
 
 
     return ( 
-        <div className="">
+        <div className=""> 
             <div className="d-flex justify-content-center align-items-center home-component">
                 { loading && <p> { loading } </p> }
-                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div className="card-activity"> { element.name } </div> </Link> )}
+                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
                 { error && <p> {error} </p> }
             </div>
         </div>

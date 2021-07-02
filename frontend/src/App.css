@@ -86,8 +86,8 @@ a {
 
 .card-activity {
   background-color: white;
-  height: 150px;
-  width: 150px;
+  height: 350px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
