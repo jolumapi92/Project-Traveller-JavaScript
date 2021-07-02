@@ -13,6 +13,7 @@ import OneBooking from './components/oneBooking';
 import EventActivities from './components/sideBarActivities';
 import FormBookingEvent from './components/formBookingActivities';
 import React, { Component }  from 'react';
+import LandingPage from './components/landingPage';
 
 function App() {
   
@@ -26,6 +27,9 @@ function App() {
               <LoginForm />
             </Route>
             <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route exact path="/allActivities">
               <Home />
             </Route>
             <Route path="/activities/:id">
