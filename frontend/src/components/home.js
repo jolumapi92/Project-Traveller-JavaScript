@@ -7,6 +7,10 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
     const { data: activities , loading, error } = useFetch('/activities');
     const [background, setBackground] = useState(null);
+
+    const selectedItem = (e) => {
+        console.log(e.target)
+    }
     
     useEffect(() => {
     fetch('https://api.unsplash.com/search/photos?page=1&query=mexico',{
@@ -16,18 +20,16 @@ const Home = () => {
         }
     }).then((res) => res.json()).then(data => {
         console.log(data.results[0].urls.full)
-        const imageFound = data.results[0].urls.full
+        const imageFound = data.results[3].urls.full
         setBackground(imageFound);
     })
     })
 
     return ( 
-        <div className=""> 
-            <div className="d-flex justify-content-center align-items-center home-component">
+        <div className="home-component-main"> 
                 { loading && <p> { loading } </p> }
-                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div style={{backgroundImage: `url("${background}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
+                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div onClick={selectedItem} className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
                 { error && <p> {error} </p> }
-            </div>
         </div>
      );
 }

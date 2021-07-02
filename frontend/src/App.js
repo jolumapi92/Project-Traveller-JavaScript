@@ -29,7 +29,10 @@ function App() {
               <Home />
             </Route>
             <Route path="/activities/:id">
-              <OneActivity />
+              <div className="d-flex justifify-content-center align-items-center ">
+                <OneActivity />
+                <Home />
+              </div>
             </Route>
             <Route path="/createActivity">
               <CreateActivity />

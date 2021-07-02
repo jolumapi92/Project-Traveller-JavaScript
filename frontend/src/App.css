@@ -41,12 +41,13 @@
   }
 }
 
-.home-component {
-  flex-direction: column;
-  background-color: #F7E185;
-}
 
 a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
   text-decoration: none;
   color: black;
 }
@@ -85,25 +86,55 @@ a {
 }
 
 .card-activity {
-  background-color: white;
-  height: 250px;
-  width: 80vw;
+  background-color: #F7E185;
+  height: 60px;
+  width: 190px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 6px;
   margin: 20px 0;
   position: relative;
-  padding: 20px;
+}
+
+.card-activity:active {
+  background-color: #F7E185;
+  height: 60px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 6px;
+  border: 3px solid #ffc107;
+  margin: 20px 0;
+  position: relative;
+}
+
+.card-activity:hover {
+  background-color: #F7E185;
+  height: 60px;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 6px;
+  border: 5px solid #ffc107;
+  margin: 20px 0;
+  position: relative;
 }
 
 .activity-name {
-  position: absolute;
-  font-size: 20px;
-  right: 40px;
+  font-size: 17px;
+  margin: 0;
 }
+
+
 
 .btn-concierge {
   color: black;
@@ -172,13 +203,27 @@ a {
   margin: 0;
 }
 
-.one-activity-component {
+.one-activity-component { 
   flex: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 70vh;
+}
+
+.home-component-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+  width: 100%;
+}
+
+.home-component-main::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .side-bar-activities {

@@ -84,7 +84,7 @@ const Navbar = () => {
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
-                { !user && !traveller && <Link to="/"><h4 className="border-bottom border-warning border-4"><strong>V</strong>agabond</h4></Link> }
+                { !user && !traveller && <Link className="text-decoration-none" to="/"><h4 className="border-bottom border-warning border-4 text-decoration-none" ><strong>V</strong>agabond</h4></Link> }
                 { user && <Link to="/"><h4 className="border-bottom border-warning border-1">Vagabond: Welcome { user } !</h4></Link> }
                 { traveller && <Link to="/"><h4 className="border-bottom border-warning border-1" >Vagabond: Welcome { traveller } !</h4></Link> }
                 <div className="collapse navbar-collapse" id="navbarResponsive">
