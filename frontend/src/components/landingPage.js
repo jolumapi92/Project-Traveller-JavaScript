@@ -3,9 +3,9 @@ import React, { Component }  from 'react';
 
 const LandingPage = () => {
     return ( 
-        <section>
-            <h1>Smartest way to travel Mexico</h1>
-            <Link to={'/allActivities'}> <button>Start Journey</button>  </Link>
+        <section className="landing-page-vagabond">
+            <h1 className="text-light landing-motto">Best way to get to discover Mexico</h1>
+            <Link to={'/allActivities'}> <button className="btn btn-warning button-to-action">Start Journey</button>  </Link>
         </section>
      );
 }

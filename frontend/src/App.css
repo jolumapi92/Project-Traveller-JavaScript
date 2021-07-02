@@ -245,3 +245,28 @@ a:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.landing-page-vagabond {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,1)), url("https://images.unsplash.com/photo-1539056508925-ac839ab1d69a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.landing-motto {
+  position: relative;
+  top: 25vh;
+}
+
+.button-to-action {
+  width: 180px;
+  height: 60px;
+  position: relative;
+  top: 30vh;
+  font-size: 20px;
+}
