@@ -7,10 +7,6 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
     const { data: activities , loading, error } = useFetch('/activities');
     const [background, setBackground] = useState(null);
-
-    const selectedItem = (e) => {
-        console.log(e.target)
-    }
     
     useEffect(() => {
     fetch('https://api.unsplash.com/search/photos?page=1&query=mexico',{
@@ -28,7 +24,7 @@ const Home = () => {
     return ( 
         <div className="home-component-main"> 
                 { loading && <p> { loading } </p> }
-                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div onClick={selectedItem} className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
+                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
                 { error && <p> {error} </p> }
         </div>
      );
