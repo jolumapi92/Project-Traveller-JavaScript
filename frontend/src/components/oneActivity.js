@@ -7,7 +7,9 @@ const OneActivity = () => {
     const history = useHistory();
     const { id } = useParams();
     const { data: activity, loading, error } = useFetch('/activities/' + id )
-    const [backgroundImage, setBackgroundImage] = useState('mexico');
+    const [backgroundImage, setBackgroundImage] = useState(null);
+    const [backgroundImage1, setBackgroundImage1] = useState(null);
+    const [backgroundImage2, setBackgroundImage2] = useState(null);
 
     const handleDelete = () => {
         fetch('/activities/'+ id, {
@@ -34,9 +36,13 @@ const OneActivity = () => {
                 'Authorization':  `Client-ID ${process.env.REACT_APP_API_URL}`
             }
             }).then((res) => res.json()).then(data => {
-            console.log(data.results[0].urls.full)
-            const imageFound = data.results[3].urls.full
+            console.log(data.results[3].urls.full)
+            const imageFound = data.results[1].urls.full
+            const imageFound1 = data.results[2].urls.full
+            const imageFound2 = data.results[3].urls.full
             setBackgroundImage(imageFound);
+            setBackgroundImage1(imageFound1);
+            setBackgroundImage2(imageFound2);
         })  
          } catch (error) {
             
@@ -44,14 +50,18 @@ const OneActivity = () => {
         })
     
     return (         
-        <div style={{backgroundImage: `url("${backgroundImage}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="one-activity-component">
+        <div  className="one-activity-component">
             {loading && <p> { loading } </p> }
             { activity && <h3> {activity.name} </h3> }
-            { activity && <p> {activity.location} </p> }
-            { activity && <p> {activity.category} </p> }
             { activity && <p> {activity.description} </p> }
+            <div className="d-flex justify-content-center align-items-center">
+                { activity && <div style={{backgroundImage: `url("${backgroundImage}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="frame-location-photo mx-5"> { activity && <p className="city-location"> <strong> {activity.location} </strong> </p> } </div> }
+                { activity && <div style={{backgroundImage: `url("${backgroundImage1}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="frame-location-photo mx-5"> { activity && <p className="city-location"> <strong> {activity.location} </strong> </p> } </div> }
+                { activity && <div style={{backgroundImage: `url("${backgroundImage2}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="frame-location-photo mx-5"> { activity && <p className="city-location"> <strong> {activity.location} </strong> </p> } </div> }
+            </div>
+            { activity && <p> {activity.category} </p> }
+            
             { error && <p> {error} </p>  }
-
             { !error && <button className="btn btn-danger" onClick={ handleDelete } > Borrar Actividad </button> }
         </div>
      );
