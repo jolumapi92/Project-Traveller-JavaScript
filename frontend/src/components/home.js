@@ -24,7 +24,7 @@ const Home = () => {
     return ( 
         <div className="home-component-main"> 
                 { loading && <p> { loading } </p> }
-                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
+                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div  className="card-activity"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
                 { error && <p> {error} </p> }
         </div>
      );
