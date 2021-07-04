@@ -54,6 +54,7 @@ const OneActivity = () => {
             const imageFound6 = data.results[7].urls.full
             const imageFound7 = data.results[8].urls.full
             const imageFound8 = data.results[9].urls.full
+
             setBackgroundImage(imageFound);
             setBackgroundImage1(imageFound1);
             setBackgroundImage2(imageFound2);
