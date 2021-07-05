@@ -11,7 +11,9 @@ const EventActivities = () => {
             <h3 className="border-bottom border-warning border-4">Activities</h3> 
             <p>These are all the activities you can choose from according to the location you selected.</p> 
             {loading && loading }
-            { activities && activities.map(activity => {return <div> <p> <strong>Concept:</strong> {activity.name} </p> <p> <strong>Category:</strong>  {activity.description}</p> <p> <strong>Category:</strong> {activity.category}</p> </div> }) }
+            <div className="all-activities-container">
+                { activities && activities.map(activity => {return <div className="activities-from-location"> <p> <strong>Concept:</strong> {activity.name} </p> <p> <strong>Description:</strong>  {activity.description}</p> <p> <strong>Category:</strong> {activity.category}</p> </div> }) }
+            </div>
             {error && error}
         </div>
      );

@@ -42,13 +42,14 @@ const FormBookingEvent = () => {
 
     return ( 
         <div className="footer-selecting-activities">
+            <h4 className="header-title-form">Submit your activities</h4>
             <form onSubmit={handleSubmit}>
                 <select multiple='true' onChange={handleChange}>
                     { activities && activities.map( activity => {return <option value={activity._id}>{activity.name}</option> }) }
                 </select>
-                <button className="btn btn-warning">Save Activities</button>
+                <br/>
+                <button className="btn btn-warning mt-3">Save Activities</button>
             </form>
-            <h4>Please submit your activities</h4>
         </div>
      );
 }

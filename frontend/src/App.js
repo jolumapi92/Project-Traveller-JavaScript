@@ -55,10 +55,9 @@ function App() {
             </Route>
             <Route path="/Allbookings/:id">
               <div className="d-flex justify-content-center align-items-center">
-                  <OneBooking/>
                   <EventActivities />
+                  <FormBookingEvent />
               </div>
-              <FormBookingEvent />
             </Route>
           </Switch>
         </div>
