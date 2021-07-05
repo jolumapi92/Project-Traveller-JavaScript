@@ -44,16 +44,17 @@ const OneActivity = () => {
                 'Authorization':  `Client-ID ${process.env.REACT_APP_API_URL}`
             }
             }).then((res) => res.json()).then(data => {
+            console.log(data)
             console.log(data.results[3].urls.full)
-            const imageFound = data.results[1].urls.full
-            const imageFound1 = data.results[2].urls.full
-            const imageFound2 = data.results[3].urls.full
-            const imageFound3 = data.results[4].urls.full
-            const imageFound4 = data.results[5].urls.full
-            const imageFound5 = data.results[6].urls.full
-            const imageFound6 = data.results[7].urls.full
-            const imageFound7 = data.results[8].urls.full
-            const imageFound8 = data.results[9].urls.full
+            const imageFound = data.results[1].urls.small
+            const imageFound1 = data.results[2].urls.small
+            const imageFound2 = data.results[3].urls.small
+            const imageFound3 = data.results[4].urls.small
+            const imageFound4 = data.results[5].urls.small
+            const imageFound5 = data.results[6].urls.small
+            const imageFound6 = data.results[7].urls.small
+            const imageFound7 = data.results[8].urls.small
+            const imageFound8 = data.results[9].urls.small
 
             setBackgroundImage(imageFound);
             setBackgroundImage1(imageFound1);

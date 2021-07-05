@@ -8,9 +8,9 @@ const AllBookings = () => {
 
 
     return ( 
-        <section className="p-5 d-flex align-items-center justify-content-center main-form-section">
+        <section className="p-5 d-flex align-items-center justify-content-center main-section-allbookings">
             { loading && loading }
-            { events && events.map( element => { return <Link to={`/Allbookings/${element._id}`}><div className="col-10 card-event my-5"> <p> Location: {element.location} </p> <p> Agent: {element.agent.username}</p> <p> Members: {element.number}</p></div></Link>} ) }
+            { events && events.map( element => { return <Link to={`/Allbookings/${element._id}`}><div className="card-event my-5"> <p className="destination-ticket"> Destination: <strong> {element.location} </strong> </p> <p className="agent-name"> agent assigned: {element.agent.username}</p> <p className="traveller-name"> Traveller: {element.traveller.name}</p> <p className="number-of-passengers"> Passengers: {element.number}</p> <p className="purchased-date">booked: {element.createdAt}</p> <p className="unique-id">Vagabond Code: {element._id}</p> <p className="boarding-pass">Boarding Pass</p> <p className="type-traveller">Premium Class</p></div></Link>} ) }
             { error && error }
         </section>
      );

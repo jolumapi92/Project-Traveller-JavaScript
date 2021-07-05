@@ -52,6 +52,9 @@ a:hover {
   color: black;
 }
 
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 
 
 .login-component {
@@ -157,7 +160,8 @@ a:hover {
 
 .main-form-section {
   flex-direction: column;
-  background-color: #F7E185;
+  background-image: linear-gradient(to top, #f786b3, #ff959b, #ffab88, #ffc67e, #f7e185);
+  height: 100vh;
 }
 
 .form-new-bookin {
@@ -194,10 +198,12 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 9px;
-  background-color: white;
-  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  border-radius: 20px;
+  background-color: #FFA900;
+  height: 220px;
+  width: 60vw;
+  position: relative;
 }
 
 .card-event > * {
@@ -236,6 +242,8 @@ a:hover {
 .home-component-main::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+
 
 .side-bar-activities {
   flex: 1;
@@ -299,4 +307,92 @@ a:hover {
 .city-location {
   position: absolute;
   bottom: -48px;
+}
+
+.main-section-allbookings {
+  overflow: scroll;
+  flex-direction: column;
+}
+
+.destination-ticket {
+  position: absolute;
+  left: 1em;
+  border-right: 5px dashed white;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.unique-id {
+  position: absolute;
+  /* transform: rotate(-90deg); */
+  font-style: italic;
+  bottom: 0px;
+  right: 5px;
+  margin: 0;
+  font-size: 13px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.agent-name {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  bottom: 62px;
+  font-size: 13px;
+  right: 5px;
+}
+
+.purchased-date {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  font-size: 13px;
+  bottom: 30px;
+  right: 5px;
+}
+
+.number-of-passengers {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  font-size: 14px;
+  top: 60%;
+}
+
+.boarding-pass {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 10px;
+  font-weight: bolder;
+}
+
+.type-traveller {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
+  top: 10px;
+  font-weight: bolder;
+}
+
+.traveller-name {
+  background-color: white;
+  border-radius: 16px;
+  padding: 3px 5px;
+  position: absolute;
+  font-size: 20px;
 }

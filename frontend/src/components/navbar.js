@@ -97,7 +97,7 @@ const Navbar = () => {
                         { user && agentEvents && <Link to="/AllbookingsAgents" ><button className="btn btn-warning">Appointments</button></Link>}
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">New Activity</button></Link>}
                         { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
-                        { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-warning">Logout</button> }
+                        { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-danger">Logout</button> }
                     </ul>
                 </div>
             </div>
