@@ -281,9 +281,21 @@ body::-webkit-scrollbar {
   background-color: white;
 }
 
+.form-for-selecting-activities select {
+  border: none;
+  outline: none;
+}
+
+
+
 .title-header-activities-location {
   position: absolute;
   top: 20vh;
+}
+
+.instructions-form-activities-event {
+  position: absolute;
+  top: 10vh;
 }
 
 .instructions-of-activities-event {
