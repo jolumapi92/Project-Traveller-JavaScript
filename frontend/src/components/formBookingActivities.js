@@ -42,7 +42,7 @@ const FormBookingEvent = () => {
 
     return ( 
         <div className="footer-selecting-activities">
-            <h4 className="header-title-form">Submit your activities</h4>
+            <h4 className="header-title-form border-bottom border-warning border-3">Submit your activities</h4>
             <form onSubmit={handleSubmit}>
                 <select multiple='true' onChange={handleChange}>
                     { activities && activities.map( activity => {return <option value={activity._id}>{activity.name}</option> }) }
