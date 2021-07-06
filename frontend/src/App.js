@@ -14,6 +14,7 @@ import EventActivities from './components/sideBarActivities';
 import FormBookingEvent from './components/formBookingActivities';
 import React, { Component }  from 'react';
 import LandingPage from './components/landingPage';
+import MyJourneys from './components/allJourneys';
 
 function App() {
   
@@ -52,6 +53,9 @@ function App() {
             </Route>
             <Route exact path="/AllbookingsAgents">
               <AllApointments />
+            </Route>
+            <Route exact path="/MyJourney/:idEvent">
+              <MyJourneys />
             </Route>
             <Route path="/Allbookings/:id">
               <div className="d-flex justify-content-center align-items-center">
