@@ -74,7 +74,7 @@ const OneActivity = () => {
         })
     
     return (         
-        <div  className="one-activity-component">
+        <div  className="one-activity-component p-5">
             {loading && <p> { loading } </p> }
             { activity && <h3 className="name-activity"> {activity.name} </h3> }
             { activity && <p className="description-activity"> {activity.description} </p> }
@@ -95,7 +95,7 @@ const OneActivity = () => {
             </div>
             { activity && <p> {activity.category} </p> }
             { error && <p> {error} </p>  }
-            { !error && <button className="btn btn-danger" onClick={ handleDelete } > Borrar Actividad </button> }
+            { !error && <button className="btn btn-danger mb-5" onClick={ handleDelete } > Borrar Actividad </button> }
         </div>
      );
 }

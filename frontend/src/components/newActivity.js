@@ -27,33 +27,38 @@ const CreateActivity = () => {
 
 
     return ( 
-        <div>
-            <form onSubmit={ handleSubmit }>
+        <div className="d-flex justify-content-center align-items-center manager-new-activity">
+            <h1>Create a new entry for activity</h1>
+            <form  className="mb-5" onSubmit={ handleSubmit }>
                 <input type="text"
                 placeholder="Name of the activity"
                 required
                 value={name}
                 onChange={ (event) => { setName(event.target.value) } }
                 />
+                <br/>
                 <input type="text"
                 placeholder="Location"
                 required
                 value={location}
                 onChange={ (event) => { setLocation(event.target.value) } }
                 />
+                <br/>
                 <input type="text"
                 placeholder="Category"
                 required
                 value={category}
                 onChange={ (event) => { setCategory(event.target.value) } }
                 />
+                <br/>
                 <input type="text"
                 placeholder="Description"
                 required
                 value={description}
                 onChange={ (event) => { setDescription(event.target.value) } }
                 />
-                <button className="btn btn-primary">Registrar Actividad</button>
+                <br/>
+                <button className="btn btn-warning mt-3">Create</button>
             </form>
         </div>
      );

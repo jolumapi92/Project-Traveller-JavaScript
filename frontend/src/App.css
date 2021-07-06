@@ -103,25 +103,10 @@ body::-webkit-scrollbar {
   transition: 300ms;
 }
 
-.card-activity:active {
-  background-color: #F7E185;
-  height: 60px;
-  width: 170px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  border-radius: 6px;
-  border: 3px solid #ffc107;
-  margin: 20px 0;
-  position: relative;
-}
-
 .card-activity:hover {
-  background-color: #F7E185;
-  height: 60px;
-  width: 170px;
+  background-color: #ffc107;
+  height: 40px;
+  width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,7 +114,7 @@ body::-webkit-scrollbar {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 6px;
   border: 5px solid #ffc107;
-  margin: 20px 0;
+  margin: 14px 0;
   position: relative;
 }
 
@@ -220,7 +205,8 @@ body::-webkit-scrollbar {
 }
 
 .name-activity {
-  margin-top: 2em;
+  margin-top: 1em;
+  border-bottom: 4px solid #ffc107;
 }
 
 
@@ -450,4 +436,26 @@ body::-webkit-scrollbar {
 .header-title-form {
   position: absolute;
   top: 1em;
+}
+
+.manager-new-activity {
+  height: 100vh;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #f786b3, #ff959b, #ffab88, #ffc67e, #f7e185);
+}
+
+.manager-new-activity > * {
+  margin: 10px;
+}
+
+.manager-new-activity input {
+  margin: 10px;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  outline: none;
+}
+
+.main-appointments {
+  flex-direction: column;
 }

@@ -33,7 +33,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/activities/:id">
-              <div className="d-flex justifify-content-center align-items-center ">
+              <div className="d-flex">
                 <OneActivity />
                 <Home />
               </div>
