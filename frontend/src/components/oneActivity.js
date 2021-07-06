@@ -26,7 +26,7 @@ const OneActivity = () => {
             if(response.status === 403){
               return response.json();
             }
-            // history.push('/');
+            history.push('/allActivities');
         }).then( data => {
             console.log(data);
             if(data && data.notification === 'You need to be logged in'){

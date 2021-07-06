@@ -220,14 +220,9 @@ body::-webkit-scrollbar {
 }
 
 .name-activity {
-  position: relative;
-  top: -60px;
+  margin-top: 2em;
 }
 
-.description-activity {
-  position: relative;
-  top: -55px;
-}
 
 .home-component-main {
   flex: 1;
@@ -236,7 +231,6 @@ body::-webkit-scrollbar {
   align-items: center;
   overflow: scroll;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .home-component-main::-webkit-scrollbar {

@@ -37,6 +37,7 @@ const NewBooking = () => {
                 onChange={ (event) => { setLocation(event.target.value) } }
                 >
                     <option value="Cuernavaca">Cuernavaca</option>
+                    <option value="Campeche">Campeche</option>
                     <option value="Acapulco">Acapulco</option>
                     <option value="Merida">Merida</option>
                     <option value="Cancun">Cancun</option>
