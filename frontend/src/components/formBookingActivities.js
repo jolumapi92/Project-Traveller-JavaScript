@@ -9,10 +9,11 @@ const FormBookingEvent = () => {
     const idEvent = id
     const { data: activities, loading, error } = useFetch('/eventActivities/' + id);
     const [collectedActivities, setCollectedActivities] = useState([]);
+    const [selectedDate, setSelectedDate] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const activities = { collectedActivities, idEvent };
+        const activities = { collectedActivities, idEvent, selectedDate };
 
         fetch('/startingJourney', {
             method: "POST",
@@ -48,6 +49,8 @@ const FormBookingEvent = () => {
                 <select multiple='true' onChange={handleChange}>
                     { activities && activities.map( activity => {return <option value={activity._id}>{activity.name}</option> }) }
                 </select>
+                <br/>
+                <input value={selectedDate} onChange={ (e) => { setSelectedDate(e.target.value) } } className="calendar" type="date" />
                 <br/>
                 <button className="btn btn-warning mt-3">Save Activities</button>
             </form>

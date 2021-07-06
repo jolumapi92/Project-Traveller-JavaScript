@@ -465,3 +465,8 @@ body::-webkit-scrollbar {
   height: 220px;
   right: -50px;
 }
+
+.calendar {
+  margin-top: 20px;
+  border-radius: 20px;
+}
