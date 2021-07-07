@@ -10,7 +10,7 @@ module.exports.postJourney = async (req, res) => {
     console.log( collectedActivities, idEvent, selectedDate );
 
    if(token){
-       jwt.verify(token, 'papichulo', async (err, decodedToken)=>{
+       jwt.verify(token, process.env.SECRETWORD, async (err, decodedToken)=>{
            if(err){
                console.log(err)
            }
@@ -38,7 +38,7 @@ module.exports.getJourneyFromEvent = async (req, res) => {
 
 
     if(token) {
-        jwt.verify(token, 'papichulo', async (err, decodedToken) => {
+        jwt.verify(token, process.env.SECRETWORD, async (err, decodedToken) => {
             if(err){
                 console.log(err)
             } else {
