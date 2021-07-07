@@ -2,11 +2,23 @@ import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const AllBookings = () => {
     const { data: events , loading, error } = useFetch('/events');
+    const [reversedArrayEvents, setReversedArrayEvents] = useState(null);
+
+    useEffect(async() => {
+        try {
+            const reversed = await events.reverse();
+            setReversedArrayEvents(reversed)
+        } catch (error) {
+            
+        }
+    })
+   
+
     let [ retrieve, setRetrieve ] = useState(null);
     const [ loadingData, setLoadingData ] = useState(null);
 
@@ -54,7 +66,7 @@ const AllBookings = () => {
                     <div className="image-for-journey" style={{backgroundImage: `url("${background2}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} > </div> 
                     <div className="image-for-journey" style={{backgroundImage: `url("${background3}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} > </div> 
                  </div> </div> }
-            { events && events.map( element => { return <Link to={`/Allbookings/${element._id}`}><div className="card-event my-5"> <p className="destination-ticket"> Destination: <strong> {element.location} </strong> </p> <p className="agent-name"> agent assigned: {element.agent.username}</p> <p className="traveller-name"> Traveller: {element.traveller.name}</p> <p className="number-of-passengers"> Passengers: {element.number}</p> <p className="purchased-date">booked: {element.createdAt}</p> <p className="unique-id">Vagabond Code: {element._id}</p> <p className="boarding-pass">Boarding Pass</p> <p className="type-traveller">Premium Class</p> <Link onClick={ () =>  { handleClickTicket(element._id) }  } className="button-journey"><button className="btn btn-info button-journey">Journey</button></Link> </div></Link>} ) }
+            { reversedArrayEvents && reversedArrayEvents.map( element => { return <Link to={`/Allbookings/${element._id}`}><div className="card-event my-5"> <p className="destination-ticket"> Destination: <strong> {element.location} </strong> </p> <p className="agent-name"> agent assigned: {element.agent.username}</p> <p className="traveller-name"> Traveller: {element.traveller.name}</p> <p className="number-of-passengers"> Passengers: {element.number}</p> <p className="purchased-date">booked: {element.createdAt}</p> <p className="unique-id">Vagabond Code: {element._id}</p> <p className="boarding-pass">Boarding Pass</p> <p className="type-traveller">Premium Class</p> <Link onClick={ () =>  { handleClickTicket(element._id) }  } className="button-journey"><button className="btn btn-info button-journey">Journey</button></Link> </div></Link>} ) }
             { error && error }
         </section>
      );
