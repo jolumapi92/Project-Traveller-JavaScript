@@ -9,14 +9,24 @@ const AllBookings = () => {
     const { data: events , loading, error } = useFetch('/events');
     const [reversedArrayEvents, setReversedArrayEvents] = useState(null);
 
-    useEffect(async() => {
+    useEffect( async() => {
         try {
             const reversed = await events.reverse();
+            console.log(reversed)
             setReversedArrayEvents(reversed)
         } catch (error) {
             
         }
-    })
+        
+    }, [events])
+        
+            
+       
+            
+   
+
+
+    
    
 
     let [ retrieve, setRetrieve ] = useState(null);
@@ -50,10 +60,10 @@ const AllBookings = () => {
                 }) 
             setLoadingData(null)
             setRetrieve(datas)
-            console.log(retrieve)
-            console.log(locationData)
+            window.scrollTo(0, 0);
         } catch (error) {
             setLoadingData('Please subtmit your activities first')
+            window.scrollTo(0, 0);
         }  
     }
 
