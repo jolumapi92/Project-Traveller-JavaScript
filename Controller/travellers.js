@@ -14,7 +14,7 @@ module.exports.signUpTraveller = async (req, res) => {
     try {
         const user = await Traveller.create( {name, email, password, age} );
         token = createToken(user._id);
-        res.cookie('travellerConcierge', token, {httpOnly: true, maxAge: maxAge * 3000});
+        res.cookie('travellerConcierge', token, {httpOnly: true, maxAge: maxAge * 1000});
         res.status(201).json(user._id);
     } catch (error) {
         res.status(400).json( { err } )
@@ -27,7 +27,7 @@ module.exports.loginTraveller = async (req, res) => {
     try {
         const user = await Traveller.login(email, password);
         const token = createToken(user._id);
-        res.cookie('travellerConcierge', token, { httpOnly: true, maxAge: maxAge * 3000});
+        res.cookie('travellerConcierge', token, { httpOnly: true, maxAge: maxAge * 1000});
         res.status(200).json({ user: user.name });
     } catch (error) {
         res.status(400).json({ error: error });
