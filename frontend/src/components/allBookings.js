@@ -20,13 +20,6 @@ const AllBookings = () => {
         
     }, [events])
         
-            
-       
-            
-   
-
-
-    
    
 
     let [ retrieve, setRetrieve ] = useState(null);
