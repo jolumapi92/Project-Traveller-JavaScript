@@ -35,9 +35,9 @@ const ActivitiesIndex = () => {
     })
 
     return ( 
-        <div className="home-component-main-index-activities"> 
+        <div className="home-component-main-index-activities p-5"> 
                 { loading && <p> { loading } </p> }
-                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div style={{backgroundImage: `url("${background}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="card-activity-index-home"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
+                { activities &&  activities.map( element => <Link to={`/activities/${element._id}`}> <div className="card-activity-index-home"> <p className="activity-name">{ element.name }</p> </div> </Link> )}
                 { error && <p> {error} </p> }
         </div>
      );
