@@ -499,3 +499,17 @@ body::-webkit-scrollbar {
   position: relative;
   top: 40px;
 }
+
+
+.card-activity-index-home {
+  height: 200px;
+  width: 200px;
+}
+
+.home-component-main-index-activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

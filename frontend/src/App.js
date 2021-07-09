@@ -15,6 +15,7 @@ import FormBookingEvent from './components/formBookingActivities';
 import React, { Component }  from 'react';
 import LandingPage from './components/landingPage';
 import MyJourneys from './components/allJourneys';
+import ActivitiesIndex from './components/indexActivities';
 
 function App() {
   
@@ -31,7 +32,7 @@ function App() {
               <LandingPage />
             </Route>
             <Route exact path="/allActivities">
-              <Home />
+              <ActivitiesIndex />
             </Route>
             <Route path="/activities/:id">
               <div className="d-flex">
