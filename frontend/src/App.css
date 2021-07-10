@@ -346,6 +346,7 @@ body::-webkit-scrollbar {
 }
 
 .main-section-allbookings {
+  flex: 4;
   overflow: scroll;
   flex-direction: column;
 }
@@ -548,4 +549,9 @@ body::-webkit-scrollbar {
   align-items: center;
   background-image: linear-gradient(to right top, #f786b3, #ff959b, #ffab88, #ffc67e, #f7e185);
   height: 100vh;
+}
+
+.side-bar-tickeout-activities {
+  flex: 1;
+  flex-direction: column;
 }

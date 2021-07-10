@@ -1,20 +1,29 @@
 import React from 'react';
 import useFetch from './useFetch';
 import {  useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { load } from 'dotenv';
 
 const MyJourneys = () => {
-    const { idEvent } = useParams();
-    const { data: elements, error, loading } = useFetch('/getAllJourneysFromAnEvent/' + idEvent)
-    
 
+    const [incomingData, setIncomingData] = useState(null);
+    const { idEvent } = useParams();
+
+    const { data: elements, error, loading } = useFetch('/getAllJourneysFromAnEvent/' + idEvent)
+   
+   
+    
+   
     return ( 
-        <section>
-            <h1>My Journey</h1>
+        <section className="side-bar-tickeout-activities">
+            {loading  && <p>Please wait...</p> }
+            <h1 className="border-bottom border-warning border-3">My Journey</h1>
             <div>
-                <ul>
-                    {elements && <li>{elements[0].activities[0].name}</li> }
-                </ul>
+                <ol>
+                    { elements && elements[0].activities.map( element => {return <li>{element.name}</li>  } ) }
+                </ol>
             </div>
+            {error && error}
         </section>
      );
 }

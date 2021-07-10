@@ -56,7 +56,10 @@ function App() {
               <AllApointments />
             </Route>
             <Route exact path="/MyJourney/:idEvent">
-              <MyJourneys />
+              <div className="d-flex justify-content-center">
+                <AllBookings />
+                <MyJourneys />
+              </div>
             </Route>
             <Route path="/Allbookings/:id">
               <div className="d-flex justify-content-center align-items-center">

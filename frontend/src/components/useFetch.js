@@ -16,8 +16,13 @@ const useFetch = (url) => {
         axios.get(url)
         .then( res => {
             setLoading(false);
-            res.data && setData(res.data);
-            console.log(res.data);
+            console.log(res.data)
+            if(res.data.length === 0){
+                setData(null);
+            } else {
+                res.data && setData(res.data);
+                console.log(res.data);
+            }
         })
         .catch( err => {
             if(err.response.status === 403) {
