@@ -22,6 +22,7 @@ const MyJourneys = () => {
                 <ol>
                     { elements && elements[0].activities.map( element => {return <li>{element.name}</li>  } ) }
                 </ol>
+                { !elements && <p>Nothing here. Please click on your boarding pass to select your activities.</p> } 
             </div>
             {error && error}
         </section>
