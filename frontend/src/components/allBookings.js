@@ -24,41 +24,40 @@ const AllBookings = () => {
 
     let [ retrieve, setRetrieve ] = useState(null);
     const [ loadingData, setLoadingData ] = useState(null);
-
     const [ background1, setBackground1 ] = useState(null);
     const [ background2, setBackground2 ] = useState(null);
     const [ background3, setBackground3 ] = useState(null);
     
 
-    const handleClickTicket = async (id) => {
-        setLoadingData('Loading...')
-        setRetrieve(null)
-        try {
-            const datas = await axios.get('/getAllJourneysFromAnEvent/' + id)
-            let locationData = datas.data[0].activities[0].location
-            fetch(`https://api.unsplash.com/search/photos?page=1&query=${locationData}`, {
-                method: 'GET',
-                headers: {
-                    'Authorization':  `Client-ID ${process.env.REACT_APP_API_URL}`
-                }
-                }).then((res) => res.json()).then(data => {
-                    console.log(data)
-                    const imageFromLocation1 = data.results[1].urls.small
-                    const imageFromLocation2 = data.results[2].urls.small
-                    const imageFromLocation3 = data.results[3].urls.small
+    // const handleClickTicket = async (id) => {
+    //     setLoadingData('Loading...')
+    //     setRetrieve(null)
+    //     try {
+    //         const datas = await axios.get('/getAllJourneysFromAnEvent/' + id)
+    //         let locationData = datas.data[0].activities[0].location
+    //         fetch(`https://api.unsplash.com/search/photos?page=1&query=${locationData}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Authorization':  `Client-ID ${process.env.REACT_APP_API_URL}`
+    //             }
+    //             }).then((res) => res.json()).then(data => {
+    //                 console.log(data)
+    //                 const imageFromLocation1 = data.results[1].urls.small
+    //                 const imageFromLocation2 = data.results[2].urls.small
+    //                 const imageFromLocation3 = data.results[3].urls.small
     
-                    setBackground1(imageFromLocation1);
-                    setBackground2(imageFromLocation2);
-                    setBackground3(imageFromLocation3);
-                }) 
-            setLoadingData(null)
-            setRetrieve(datas)
-            window.scrollTo(0, 0);
-        } catch (error) {
-            setLoadingData('Please subtmit your activities first')
-            window.scrollTo(0, 0);
-        }  
-    }
+    //                 setBackground1(imageFromLocation1);
+    //                 setBackground2(imageFromLocation2);
+    //                 setBackground3(imageFromLocation3);
+    //             }) 
+    //         setLoadingData(null)
+    //         setRetrieve(datas)
+    //         window.scrollTo(0, 0);
+    //     } catch (error) {
+    //         setLoadingData('Please subtmit your activities first')
+    //         window.scrollTo(0, 0);
+    //     }  
+    // }
 
     return ( 
         <section className="p-5 d-flex align-items-center justify-content-center main-section-allbookings">

@@ -554,4 +554,5 @@ body::-webkit-scrollbar {
 .side-bar-tickeout-activities {
   flex: 1;
   flex-direction: column;
+  background-color: #293B5F;
 }

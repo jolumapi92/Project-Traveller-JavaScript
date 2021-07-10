@@ -97,3 +97,21 @@ module.exports.getAllEventsAgent = async (req, res) => {
         res.status(401).json({ notification: 'user not found' });
     }
 }
+
+module.exports.getAllEventsTraveller = async (req, res) => {
+    const token = req.cookies.travellerConcierge;
+
+    if(token) {
+        jwt.verify(token, 'papichulo', (error, decodedToken) => {
+            if(error){
+                console.log(error)
+            } else {
+                let user = await Traveller.findById(decodedToken.id);
+                let idUser = user._id
+                let events = await Event.findById({traveller: idUser}).populate('agent', 'username');
+                console.log(events)
+                res.status(200).json(events);
+            }
+        })
+    }
+}
