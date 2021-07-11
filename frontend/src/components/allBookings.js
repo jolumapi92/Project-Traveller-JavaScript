@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 
 const AllBookings = () => {
-    const { data: events , loading, error } = useFetch('/events');
+    const { data: events , loading, error } = useFetch('/eventsTraveller');
     const [reversedArrayEvents, setReversedArrayEvents] = useState(null);
 
     useEffect( async() => {
