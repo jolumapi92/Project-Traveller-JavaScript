@@ -2,7 +2,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import useFetch from './useFetch';
-import React from 'react';  
+import React from 'react';
+import logo from '../logo_aircraft.svg'
 
 const Navbar = () => {   
     const { data: events } = useFetch('/events');
@@ -84,6 +85,7 @@ const Navbar = () => {
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
+                <img className="logo-nav mx-3" src={logo}/>
                 { !user && !traveller && <Link className="text-decoration-none" to="/"><h4 className="border-bottom border-warning border-4 text-decoration-none" ><strong>V</strong>agabond</h4></Link> }
                 { user && <Link to="/"><h4 className="border-bottom border-warning border-1">Vagabond: Welcome { user } !</h4></Link> }
                 { traveller && <Link to="/"><h4 className="border-bottom border-warning border-1" >Vagabond: Welcome { traveller } !</h4></Link> }

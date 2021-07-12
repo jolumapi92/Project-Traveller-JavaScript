@@ -41,6 +41,9 @@
   }
 }
 
+.logo-nav {
+  height: 3em;
+}
 
 a {
   text-decoration: none;
