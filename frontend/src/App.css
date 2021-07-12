@@ -183,9 +183,11 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background-image: url('../src/background-ticket.jpeg'); */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  border-radius: 20px;
-  background-color: #F54748;
+  border-radius: 10px;
+  /* background-color: #F54748; */
+  background-color: #FF5151;
   height: 220px;
   width: 60vw;
   position: relative;
@@ -370,7 +372,7 @@ body::-webkit-scrollbar {
   bottom: 0px;
   right: 5px;
   margin: 0;
-  font-size: 13px;
+  font-size: 11px;
   background-color: white;
   border-radius: 10px;
   padding: 1px 2px;
@@ -401,8 +403,9 @@ body::-webkit-scrollbar {
   border-radius: 20px;
   padding: 3px 5px;
   position: absolute;
-  font-size: 14px;
-  top: 60%;
+  font-size: 12px;
+  bottom: 5px;
+  left: 5px;
 }
 
 .boarding-pass {

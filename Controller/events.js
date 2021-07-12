@@ -108,7 +108,7 @@ module.exports.getAllEventsTraveller = async (req, res) => {
             } else {
                 let user = await Traveller.findById(decodedToken.id);
                 let idUser = user._id
-                let events = await Event.find({traveller: idUser}).populate('traveller', 'name')
+                let events = await Event.find({traveller: idUser}).populate('traveller', 'name').populate('agent', 'username')
                 console.log(events)
                 res.status(200).json(events);
             }
