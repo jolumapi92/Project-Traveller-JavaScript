@@ -556,10 +556,11 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  left: 0px;
+  left: 20px;
   flex-direction: column;
   background-color: #293B5F;
-  border-radius: 15px;
+  border-radius: 120px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .side-bar-tickeout-activities > * {
