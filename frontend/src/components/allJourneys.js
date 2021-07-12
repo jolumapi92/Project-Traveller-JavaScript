@@ -21,15 +21,20 @@ const MyJourneys = () => {
     
    
     return ( 
-        <section className="side-bar-tickeout-activities text-light">
-            {loading  && <p>Please wait...</p> }
-            <h1 className="border-bottom border-warning border-2 text-light">My Journey</h1>
-            <div>
-                <ol>
-                    { incomingData && incomingData[0].activities.map( element => {return <li>{element.name}</li>  } ) }
-                    { !incomingData && <p>Nothing found...</p> }
-                </ol>
-            </div>
+        <section className="side-bar-tickeout-activities text-dark p-5">
+            {loading  && <button className="btn btn-primary">Please wait</button> }
+            <h1 className="border-bottom border-warning border-2 text-light">My Journey</h1> 
+                <div className="ticket-for-journey p-3">
+                    
+                        { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
+                        { !incomingData && <p className="legend-not-found">Nothing found...</p> }
+                    
+                    <p className="border-top border-warning border-1 points-legend">Puntos</p>
+                    <p className="border-top border-warning border-5 price-legend">Total</p>
+                    <div className="color-div-1"></div>
+                    <div className="color-div-2"></div>
+                    <div className="color-div-3"></div>
+                </div>
             {error && error}
         </section>
      );
