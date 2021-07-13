@@ -27,7 +27,7 @@ const MyJourneys = () => {
                 <div className="ticket-for-journey p-3">
                     
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
-                        { !incomingData && <p className="legend-not-found">Nothing found...</p> }
+                        { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
                     
                     <p className="border-top border-warning border-1 points-legend">Puntos</p>
                     <p className="border-top border-warning border-5 price-legend">Total</p>

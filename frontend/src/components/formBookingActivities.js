@@ -21,7 +21,7 @@ const FormBookingEvent = () => {
             body: JSON.stringify(activities)
         }).then( () => {
             console.log('New activity added');
-            history.push('/')
+            history.push('/Allbookings') 
         }).catch((err)=> {
             console.log(err)
         })
@@ -44,7 +44,7 @@ const FormBookingEvent = () => {
     return ( 
         <div className="footer-selecting-activities p-5">
             <h4 className="header-title-form border-bottom border-warning border-3">Submit your activities</h4>
-            <p className="instructions-form-activities-event">Select the activities you want your journey to have</p>
+            <p className="instructions-form-activities-event p-5">Select the activities you want your journey to have</p>
             <form className="form-for-selecting-activities" onSubmit={handleSubmit}>
                 <select multiple='true' onChange={handleChange}>
                     { activities && activities.map( activity => {return <option value={activity._id}>{activity.name}</option> }) }
