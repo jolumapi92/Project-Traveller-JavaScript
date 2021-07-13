@@ -23,7 +23,7 @@ const MyJourneys = () => {
     return ( 
         <section className="side-bar-tickeout-activities text-dark p-5">
             {loading  && <button className="btn btn-primary">Please wait</button> }
-            <h1 className="border-bottom border-warning border-2 text-light">My Journey</h1> 
+            <h1 className="border-bottom border-warning border-2 text-light mt-1">My Journey</h1> 
                 <div className="ticket-for-journey p-3">
                     
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }

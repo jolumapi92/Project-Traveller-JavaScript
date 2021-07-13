@@ -192,7 +192,7 @@ body::-webkit-scrollbar {
   /* background-color: #F54748; */
   background-color: #FF5151;
   height: 220px;
-  width: 60vw;
+  width: 50vw;
   position: relative;
   right: -6%;
 }
@@ -563,10 +563,10 @@ body::-webkit-scrollbar {
   position: fixed;
   width: 20vw;
   height: 80vh;
-  left: 20px;
+  left: 40px;
   flex-direction: column;
   background-color: #293B5F;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -577,7 +577,7 @@ body::-webkit-scrollbar {
 .ticket-for-journey {
   background-color: white;
   border-radius: 4px;
-  height: 60%;
+  height: 70%;
   position: relative;
   display: flex;
   flex-direction: column;
