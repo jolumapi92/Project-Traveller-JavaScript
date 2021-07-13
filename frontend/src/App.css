@@ -562,6 +562,7 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
+  height: 90vh;
   left: 20px;
   flex-direction: column;
   background-color: #293B5F;
@@ -576,7 +577,7 @@ body::-webkit-scrollbar {
 .ticket-for-journey {
   background-color: white;
   border-radius: 9px;
-  height: 60vh;
+  height: 60%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -600,7 +601,7 @@ body::-webkit-scrollbar {
   margin: 0;
 }
 
-.color-div-1 {
+/* .color-div-1 {
   background-color: #ffc107;
   height: 15px;
   width: 15px;
@@ -623,7 +624,7 @@ body::-webkit-scrollbar {
   position: absolute;
   top: -130px;
   right: 0px;
-}
+} */
 
 .points-legend {
   position: absolute;
