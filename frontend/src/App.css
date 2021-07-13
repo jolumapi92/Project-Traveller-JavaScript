@@ -562,11 +562,11 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  height: 90vh;
+  height: 80vh;
   left: 20px;
   flex-direction: column;
   background-color: #293B5F;
-  border-radius: 120px;
+  border-radius: 20px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -576,7 +576,7 @@ body::-webkit-scrollbar {
 
 .ticket-for-journey {
   background-color: white;
-  border-radius: 9px;
+  border-radius: 4px;
   height: 60%;
   position: relative;
   display: flex;
