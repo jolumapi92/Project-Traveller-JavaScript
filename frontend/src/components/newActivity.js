@@ -7,11 +7,12 @@ const CreateActivity = () => {
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
+    const [points, setPoints] = useState('');
 
     const history = useHistory();
     const handleSubmit = (event) => {
         event.preventDefault();
-        const activity = { name, location, category, description };
+        const activity = { name, location, category, description, points };
 
         fetch('/activities', {
             method: "POST",
@@ -56,6 +57,13 @@ const CreateActivity = () => {
                 required
                 value={description}
                 onChange={ (event) => { setDescription(event.target.value) } }
+                />
+                <br/>
+                <input type="number"
+                placeholder="Points"
+                required
+                value={points}
+                onChange={ (event) => { setPoints(event.target.value) } }
                 />
                 <br/>
                 <button className="btn btn-warning mt-3">Create</button>

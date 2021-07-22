@@ -18,6 +18,10 @@ const activitySchema = new Schema({
     description: {
         type: String,
         required: true
+    },
+    points: {
+        type: Number,
+        required: true
     }
     }, { 
     versionKey: false,
