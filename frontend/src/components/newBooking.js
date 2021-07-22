@@ -5,7 +5,7 @@ import React from 'react';
 const NewBooking = () => {
     const history = useHistory();
 
-    const [location, setLocation] = useState('Cuernavaca');
+    const [location, setLocation] = useState('Tulum');
     const [agent, setAgent] = useState('60c7c4df6650ae270c4aba1a');
     const [number, setNumber] = useState('');
 
@@ -20,6 +20,7 @@ const NewBooking = () => {
         }).then( () => {
             console.log('New booking added');
             history.push('/Allbookings')
+            window.location.reload();
         }).catch((err)=> {
             console.log(err)
         })
@@ -36,13 +37,13 @@ const NewBooking = () => {
                 required
                 onChange={ (event) => { setLocation(event.target.value) } }
                 >
-                    <option value="Cuernavaca">Cuernavaca</option>
-                    <option value="Campeche">Campeche</option>
-                    <option value="Acapulco">Acapulco</option>
+                    <option value="Tulum">Tulum</option>
                     <option value="Merida">Merida</option>
-                    <option value="Cancun">Cancun</option>
-                    <option value="Veracruz">Veracruz</option>
-                    <option value="Jalisco">Jalisco</option>
+                    <option value="Acapulco">Acapulco</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                    <option value="Tijuana">Tijuana</option>
+                    <option value="Durango">Durango</option>
                 </select>
                 <label>Select your agent</label>
                 <select

@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 const MyJourneys = () => {
 
     const [incomingData, setIncomingData] = useState(null);
+    const [points, setPoints] = useState(null);
+    
     const { idEvent } = useParams();
 
     const { data: elements, error, loading } = useFetch('/getAllJourneysFromAnEvent/' + idEvent)
@@ -15,6 +17,11 @@ const MyJourneys = () => {
             setIncomingData(null)
         } else {
             setIncomingData(elements)
+            let sum = 0;
+            elements[0].activities.forEach( element => {
+            sum += element.points; 
+        })
+        setPoints(sum)
         }
     })
     
@@ -29,7 +36,7 @@ const MyJourneys = () => {
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
                     
-                    <p className="border-top border-warning border-1 points-legend">Puntos</p>
+                    { points && <p className="border-top border-warning border-1 points-legend">{points}</p>}
                     <p className="border-top border-warning border-5 price-legend">Total</p>
                     <div className="color-div-1"></div>
                     <div className="color-div-2"></div>
