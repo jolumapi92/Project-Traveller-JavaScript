@@ -574,7 +574,7 @@ body::-webkit-scrollbar {
   height: 70vh;
   left: 40px;
   flex-direction: column;
-  background-color: #073254;
+  background-color: black;
   border-radius:  11px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
