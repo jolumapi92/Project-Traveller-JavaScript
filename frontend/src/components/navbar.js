@@ -94,12 +94,12 @@ const Navbar = () => {
                         { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
                         { !user && !traveller && <Link to="/travellerLogin" ><button className="btn btn-warning">Login</button></Link>}
                         {/* { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-info mx-3">Journey</button></Link> } */}
-                        { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-warning ">My bookings</button></Link> }
-                        { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3">Book</button></Link> }
+                        { traveller && events && <Link to='/Allbookings'>  <button className="btn btn-warning btn-personalized-concierge">My bookings</button></Link> }
+                        { traveller && <Link to="/bookings" ><button className="btn btn-warning mx-3 btn-personalized-concierge">Book</button></Link> }
                         { user && agentEvents && <Link to="/AllbookingsAgents" ><button className="btn btn-warning">Appointments</button></Link>}
                         { user && <Link to="/createActivity" ><button className="btn btn-warning mx-3">New Activity</button></Link>}
-                        { user && <button onClick={deleteSession}  className="btn btn-warning">Logout</button> }
-                        { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-danger">Logout</button> }
+                        { user && <button onClick={deleteSession}  className="btn btn-danger btn-personalized-concierge">Logout</button> }
+                        { traveller && <button onClick={deleteSessionTraveller}  className="btn btn-danger btn-personalized-concierge">Logout</button> }
                     </ul>
                 </div>
             </div>

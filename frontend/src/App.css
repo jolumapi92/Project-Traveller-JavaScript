@@ -66,6 +66,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #FBC109;
 }
 
 .login-component > * {
@@ -79,11 +80,19 @@ body::-webkit-scrollbar {
 }
 
 .form-login {
+  border-top: 60px solid #FBC109;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 4em;
   border-radius: 5px;
+  background-color: white;
+  position: relative;
+  transition: 200ms box-shadow;
+}
+
+.form-login:hover {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .form-login a {
@@ -638,4 +647,39 @@ body::-webkit-scrollbar {
   bottom: 0;
   font-size: 20px;
   width: 60%;
+}
+
+.btn-personalized-concierge {
+  border-radius:  28px;
+}
+
+.enter-button {
+  background-color: black;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.enter-button:hover {
+  background-color: #FBC109;
+  border-radius: 20px;
+}
+
+.primary-button {
+  background-color: #FBC109;
+  border-left: 5px solid #FA470A;
+  width: 100%;
+  transition: width 300ms;
+}
+
+.primary-button:hover {
+  width: 110%;
+}
+
+
+.traveller-header {
+  position: relative;
+  top: -120px;
 }
