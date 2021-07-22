@@ -49,7 +49,7 @@ const LoginTraveller = () => {
                     <input className="box-input" type="password" placeholder="password" onChange={ event => setPasswordLog(event.target.value) }/>
                 </div>
                 <button className="btn mt-5 primary-button" onClick={login}>Enter</button>
-                <Link className="text-light enter-button" to="/login">Concierge</Link>
+                <Link className="btn text-light enter-button" to="/login">Concierge</Link>
             </div>
         </div>
      );

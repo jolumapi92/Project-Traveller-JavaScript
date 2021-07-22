@@ -38,8 +38,9 @@ const LoginForm = () => {
 
     return ( 
         <div className="login-component">
-            <h1 className="mb-4">Concierge</h1>
+            
             <div className="form-login">
+                <h1 className="traveller-header">Concierge</h1>
                 <h1 className="mb-5">Log in</h1>
                 <div>
                     <input className="box-input" placeholder="email" onChange={ event => setEmailLog(event.target.value) }/>
@@ -48,7 +49,7 @@ const LoginForm = () => {
                     <input className="box-input" type="password" placeholder="password" onChange={ event => setPasswordLog(event.target.value) }/>
                 </div>
                 <button className="btn btn-warning mt-5" onClick={login}>Iniciar</button>
-                <Link className="btn btn-primary" to="/travellerLogin">Traveller</Link>
+                <Link className="btn text-light enter-button" to="/travellerLogin">Traveller</Link>
             </div>
         </div>
      );

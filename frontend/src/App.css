@@ -662,14 +662,8 @@ body::-webkit-scrollbar {
   font-weight: bold;
 }
 
-.enter-button:hover {
-  background-color: #FBC109;
-  border-radius: 20px;
-}
-
 .primary-button {
   background-color: #FBC109;
-  border-left: 5px solid #FA470A;
   width: 100%;
   transition: width 300ms;
 }
