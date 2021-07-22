@@ -479,8 +479,8 @@ body::-webkit-scrollbar {
 
 .button-journey {
   position: absolute;
-  height: 220px;
-  right: -50px;
+  height: 80px;
+  right: -60px;
   background-color: #6E5502;
   color: white;
   font-weight: bold;
