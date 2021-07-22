@@ -571,7 +571,7 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  height: 80vh;
+  height: 70vh;
   left: 40px;
   flex-direction: column;
   background-color: #073254;
