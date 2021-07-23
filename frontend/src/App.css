@@ -646,9 +646,23 @@ body::-webkit-scrollbar {
   width: 60%;
 }
 
+.points-legend-1 {
+  position: absolute;
+  font-size: 20px;
+  bottom: 40%;
+  width: 60%;
+}
+
 .price-legend {
   position: absolute;
   bottom: 0;
+  font-size: 20px;
+  width: 60%;
+}
+
+.price-legend-1 {
+  position: absolute;
+  bottom: 10%;
   font-size: 20px;
   width: 60%;
 }

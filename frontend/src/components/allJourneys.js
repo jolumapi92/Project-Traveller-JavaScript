@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 const MyJourneys = () => {
 
+    const [price, setPrice] = useState(null)
     const [incomingData, setIncomingData] = useState(null);
     const [points, setPoints] = useState(null);
     
@@ -22,6 +23,8 @@ const MyJourneys = () => {
             sum += element.points; 
         })
         setPoints(sum)
+        const finalPrice = sum * 15;
+        setPrice(finalPrice)
         }
     })
     
@@ -35,9 +38,10 @@ const MyJourneys = () => {
                         {loading && <p className="text-dark">Loading</p> }
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
-                    
-                    { points && <p className="border-top border-warning border-1 points-legend">{points}</p>}
-                    <p className="border-top border-warning border-5 price-legend">Total</p>
+                    <p className="points-legend-1">{points}</p>
+                    { points && <p className="border-top border-warning border-1 points-legend">Puntos</p>}
+                    { price && <p className=" price-legend-1"> Total </p>}
+                    { price && <p className="border-top border-warning border-5 price-legend"> $ { price } USD </p>}
                     <div className="color-div-1"></div>
                     <div className="color-div-2"></div>
                     <div className="color-div-3"></div>
