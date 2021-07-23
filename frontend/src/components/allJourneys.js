@@ -34,7 +34,7 @@ const MyJourneys = () => {
         <section className="side-bar-tickeout-activities text-dark p-5">
             
             <h1 className="border-bottom border-warning border-2 text-dark mt-1">My Journey</h1> 
-                <div className="ticket-for-journey p-3">
+                <div className="ticket-for-journey p-1">
                         {loading && <p className="text-dark">Loading</p> }
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
