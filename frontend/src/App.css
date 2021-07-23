@@ -721,6 +721,10 @@ body::-webkit-scrollbar {
   width: 70%;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-checkout {
@@ -728,6 +732,7 @@ body::-webkit-scrollbar {
   font-size: 60px;
   position: absolute;
   top: -85px;
+  left: 0px;
 }
 
 .logo-nav-checkout {
@@ -736,3 +741,40 @@ body::-webkit-scrollbar {
   bottom: -50px;
   right: -70px;
 }
+
+.button-for-paying {
+  position: absolute;
+  height: 50px;
+  bottom: 15%;
+}
+
+.additional-data-header {
+  color: #FBC109;
+  font-style: italic;
+  position: absolute;
+  left: 10px;
+  top: 70%;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+
+.location-data-header {
+  color: #FBC109;
+  font-style: italic;
+  position: absolute;
+  left: 10px;
+  top: 10%;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.details-data-header {
+  color: #FBC109;
+  font-style: italic;
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  font-size: 25px;
+  font-weight: bolder;
+} 

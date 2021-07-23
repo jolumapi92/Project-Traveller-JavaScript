@@ -43,7 +43,7 @@ module.exports.getJourneyFromEvent = async (req, res) => {
                 console.log(err)
             } else {
                 try {
-                    const journeys = await Journey.find({ event: idEvent }).populate('activities')
+                    const journeys = await Journey.find({ event: idEvent }).populate('activities').populate('event').populate('agent')
                     console.log(journeys)
                     res.status(200).json(journeys); 
                 } catch (error) {
