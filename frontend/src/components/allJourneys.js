@@ -33,13 +33,13 @@ const MyJourneys = () => {
     return ( 
         <section className="side-bar-tickeout-activities text-dark p-5">
             
-            <h1 className="border-bottom border-warning border-2 text-light mt-1">My Journey</h1> 
+            <h1 className="border-bottom border-warning border-2 text-dark mt-1">My Journey</h1> 
                 <div className="ticket-for-journey p-3">
                         {loading && <p className="text-dark">Loading</p> }
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
                     <p className="points-legend-1">{points}</p>
-                    { points && <p className="border-top border-warning border-1 points-legend">Puntos</p>}
+                    { points && <p className="points-legend">Puntos</p>}
                     { price && <p className=" price-legend-1"> Total </p>}
                     { price && <p className="border-top border-warning border-5 price-legend"> $ { price } USD </p>}
                     <div className="color-div-1"></div>

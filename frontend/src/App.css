@@ -571,12 +571,12 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  height: 75vh;
+  height: 65vh;
   left: 40px;
   flex-direction: column;
-  background-color: black;
+  background-color: white;
   border-radius:  11px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .background-of-ticket {
@@ -588,9 +588,8 @@ body::-webkit-scrollbar {
 }
 
 .ticket-for-journey {
-  background-color: white;
   border-radius: 44px;
-  height: 70%;
+  height: 85%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -647,10 +646,16 @@ body::-webkit-scrollbar {
 }
 
 .points-legend-1 {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #FBC109;
+  border-radius: 100%;
   position: absolute;
   font-size: 20px;
   bottom: 40%;
-  width: 60%;
 }
 
 .price-legend {
