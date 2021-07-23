@@ -571,7 +571,7 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  height: 65vh;
+  height: 70vh;
   left: 40px;
   flex-direction: column;
   background-color: white;
@@ -699,4 +699,40 @@ body::-webkit-scrollbar {
 .traveller-header {
   position: relative;
   top: -120px;
+}
+
+.checkout-payment-button {
+  position: absolute;
+  bottom: -70px;
+  background-color: #FBC109;
+}
+
+.background-section-checkout {
+  background-image: linear-gradient(to top, #f786b3, #ff959b, #ffab88, #ffc67e, #f7e185);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-container {
+  background-color: white;
+  height: 70%;
+  width: 70%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  position: relative;
+}
+
+.header-checkout {
+  color: black;
+  font-size: 60px;
+  position: absolute;
+  top: -85px;
+}
+
+.logo-nav-checkout {
+  position: absolute;
+  height: 12em;
+  bottom: -50px;
+  right: -70px;
 }

@@ -16,6 +16,7 @@ import React, { Component }  from 'react';
 import LandingPage from './components/landingPage';
 import MyJourneys from './components/allJourneys';
 import ActivitiesIndex from './components/indexActivities';
+import CheckoutPage from './components/CheckoutPage';
 
 function App() {
   
@@ -66,6 +67,9 @@ function App() {
                   <EventActivities />
                   <FormBookingEvent />
               </div>
+            </Route>
+            <Route exact path="/CheckoutAndPayment/:id">
+              <CheckoutPage />
             </Route>
           </Switch>
         </div>

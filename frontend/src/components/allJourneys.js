@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetch from './useFetch';
-import {  useParams } from "react-router-dom";
+import {  useParams, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 const MyJourneys = () => {
@@ -31,10 +31,10 @@ const MyJourneys = () => {
     
    
     return ( 
-        <section className="side-bar-tickeout-activities text-dark p-5">
+        <section className="side-bar-tickeout-activities text-dark p-3">
             
             <h1 className="border-bottom border-warning border-2 text-dark mt-1">My Journey</h1> 
-                <div className="ticket-for-journey p-1">
+                <div className="ticket-for-journey">
                         {loading && <p className="text-dark">Loading</p> }
                         { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
@@ -42,9 +42,7 @@ const MyJourneys = () => {
                     { points && <p className="points-legend">Puntos</p>}
                     { price && <p className=" price-legend-1"> Total </p>}
                     { price && <p className="border-top border-warning border-5 price-legend"> $ { price } USD </p>}
-                    <div className="color-div-1"></div>
-                    <div className="color-div-2"></div>
-                    <div className="color-div-3"></div>
+                    <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>
                 </div>
             {error && error}
         </section>
