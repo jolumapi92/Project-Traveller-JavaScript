@@ -703,7 +703,7 @@ body::-webkit-scrollbar {
 
 .checkout-payment-button {
   position: absolute;
-  bottom: -70px;
+  bottom: -60px;
   background-color: #FBC109;
 }
 
