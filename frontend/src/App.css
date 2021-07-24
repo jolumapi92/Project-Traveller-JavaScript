@@ -571,7 +571,7 @@ body::-webkit-scrollbar {
   flex: 1;
   position: fixed;
   width: 20vw;
-  height: 70vh;
+  height: 60vh;
   left: 40px;
   flex-direction: column;
   background-color: white;
@@ -641,7 +641,7 @@ body::-webkit-scrollbar {
 .points-legend {
   position: absolute;
   font-size: 20px;
-  bottom: 30%;
+  bottom: 10%;
   width: 60%;
 }
 
@@ -655,7 +655,7 @@ body::-webkit-scrollbar {
   border-radius: 100%;
   position: absolute;
   font-size: 20px;
-  bottom: 40%;
+  bottom: 20%;
 }
 
 .price-legend {

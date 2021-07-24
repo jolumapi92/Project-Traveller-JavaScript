@@ -31,7 +31,7 @@ const MyJourneys = () => {
     
    
     return ( 
-        <section className="side-bar-tickeout-activities text-dark p-3">
+        <section className="side-bar-tickeout-activities text-dark p-3 my-5">
             
             <h1 className="border-bottom border-warning border-2 text-dark mt-1">My Journey</h1> 
                 <div className="ticket-for-journey">
@@ -40,8 +40,6 @@ const MyJourneys = () => {
                         { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
                     <p className="points-legend-1">{points}</p>
                     { points && <p className="points-legend">Puntos</p>}
-                    { price && <p className=" price-legend-1"> Total </p>}
-                    { price && <p className="border-top border-warning border-5 price-legend"> $ { price } USD </p>}
                     <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>
                 </div>
             {error && error}
