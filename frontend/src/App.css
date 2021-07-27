@@ -570,13 +570,21 @@ body::-webkit-scrollbar {
 .side-bar-tickeout-activities {
   flex: 1;
   position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 20vw;
   height: 60vh;
   left: 40px;
-  flex-direction: column;
+  border-top: 60px solid #FBC109;
   background-color: white;
   border-radius:  11px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.header-for-journey-title {
+  position: absolute;
+  top: -90px;
 }
 
 .background-of-ticket {
@@ -703,7 +711,7 @@ body::-webkit-scrollbar {
 
 .checkout-payment-button {
   position: absolute;
-  bottom: -60px;
+  bottom: -140px;
   background-color: #FBC109;
 }
 

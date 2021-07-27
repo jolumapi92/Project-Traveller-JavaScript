@@ -45,10 +45,6 @@ const CheckoutPage = () => {
                     <p className="total-legend-checkout">Total</p>
                     {infos && <p className="travellers-company">Travellers: {infos[0].event.number} </p> }
                 </div>
-                
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
             
                 

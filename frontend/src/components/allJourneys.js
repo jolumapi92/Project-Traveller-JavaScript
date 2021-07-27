@@ -32,16 +32,15 @@ const MyJourneys = () => {
    
     return ( 
         <section className="side-bar-tickeout-activities text-dark p-3 my-5">
-            
-            <h1 className="border-bottom border-warning border-2 text-dark mt-1">My Journey</h1> 
-                <div className="ticket-for-journey">
-                        {loading && <p className="text-dark">Loading</p> }
-                        { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
-                        { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
-                    <p className="points-legend-1">{points}</p>
-                    { points && <p className="points-legend">Puntos</p>}
-                    <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>
-                </div>
+            <div className="ticket-for-journey">
+            <h1 className="border-bottom border-warning border-2 text-dark mt-1 header-for-journey-title">My Journey</h1> 
+                    {loading && <p className="text-dark">Loading</p> }
+                    { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
+                    { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
+                <p className="points-legend-1">{points}</p>
+                { points && <p className="points-legend">Puntos</p>}
+                <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>
+            </div>
             {error && error}
         </section>
      );
