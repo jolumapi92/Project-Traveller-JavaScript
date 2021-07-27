@@ -736,27 +736,24 @@ body::-webkit-scrollbar {
 }
 
 .agent-assigned {
-  position: absolute;
-  left: 45px;
-  top: 50%;
+  
 }
 
 .travellers-company {
-  position: absolute;
-  left: 45px;
-  top: 55%;
+  
 }
 
 .event-id {
-  position: absolute;
-  left: 45px;
-  top: 80%;
+  
 }
 
 .traveller-id {
-  position: absolute;
-  left: 45px;
-  top: 85%;
+  
+}
+
+.location-in-card {
+   font-weight: bolder;
+   font-size: 25px;
 }
 
 .main-div-activities {
@@ -773,10 +770,9 @@ body::-webkit-scrollbar {
 }
 
 .logo-nav-checkout {
-  position: absolute;
-  height: 12em;
-  bottom: -90px;
-  right: -160px;
+  position: relative;
+  height: 5em;
+  top: 5%;
 }
 
 .button-for-paying {
@@ -821,22 +817,21 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 60px;
-  top: 20%;
   height: 55%;
   width: 20%;
   border-radius: 9px;
-  background-color: #FBC109;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-top: 60px solid #FBC109;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
 }
 
 .total-legend-checkout {
-  border-top: 4px solid black;
   font-size: 30px;
   position: absolute;
-  bottom: -10px;
+  top: -50px;
   width: 100%;
+  font-weight: bold;
 }
 
 .points-for-checkout {
@@ -844,8 +839,57 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 10px solid white;
+  border: 10px solid #FBC109;
   border-radius: 100%;
   height: 90px;
   width: 90px;
+}
+
+.checkout-container-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.card-for-location_activities {
+  border-radius: 9px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  width: 20%;
+  border-top: 60px solid #FBC109;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+.name-for-card-checkout {
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  top: -50px;
+}
+
+.detail-for-checkout {
+  border-radius: 9px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  width: 20%;
+  border-top: 60px solid #FBC109;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+.details-card-header {
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  top: -50px;
 }

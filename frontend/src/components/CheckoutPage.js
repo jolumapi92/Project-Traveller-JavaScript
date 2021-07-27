@@ -11,25 +11,35 @@ const CheckoutPage = () => {
 
     return ( 
         <section className="background-section-checkout">
-            <div className="checkout-container">
-                <p className="border-warning border-bottom border-2 location-data-header">Location:</p>
-                <p className="border-warning border-bottom border-2 details-data-header">Details:</p>
-                {infos && <p className="agent-assigned">Assigned agent ID: {infos[0].event.agent} </p> }
-                {infos && <p className="location-for-checkout">{infos[0].event.location} </p> }
-                {infos && <p className="travellers-company">Travellers: {infos[0].event.number} </p> }
-                {infos && <p className="event-id">Event ID: {infos[0].event._id} </p> }
-                {infos && <p className="traveller-id">Traveller ID: {infos[0].event.traveller} </p> }
-                {infos && <div className="main-div-activities">{infos[0].activities.map( activity => {return  <p> {activity.name} </p> } ) } </div> }
-                <p className="border-warning border-bottom border-2 additional-data-header">Additional Data:</p>
-                <p className="header-checkout">#Vagabond</p>
-                <img className="logo-nav-checkout" src={logo}/>
-                <div className="card-for-checkout">
+            <div className="checkout-container-1">
+                <div className="card-for-location_activities mx-5">
+                    <p className="name-for-card-checkout">Location</p>
+                    {infos && <p className="location-in-card">{infos[0].event.location} </p> }
+                    {infos && <div className="">{infos[0].activities.map( activity => {return  <p> {activity.name} </p> } ) } </div> }
+                    <img className="logo-nav-checkout" src={logo}/>
+                </div>
+                <div className="detail-for-checkout p-3">
+                    <p className="details-card-header">Details</p>
+                    {infos && <p className="agent-assigned">{infos[0].event.agent} </p> }
+                    {infos && <p className="event-id">{infos[0].event._id} </p> }
+                    {infos && <p className="traveller-id">{infos[0].event.traveller} </p> }
+                </div>
+                <div className="card-for-checkout mx-5">
                     <p>Points</p>
                     <p className="points-for-checkout">20</p>
                     <p className="total-legend-checkout">Total</p>
-                    
+                    {infos && <p className="travellers-company">Travellers: {infos[0].event.number} </p> }
                 </div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+            
+                
+                
+                
+                
         </section>
      );
 }
