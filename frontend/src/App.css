@@ -708,7 +708,7 @@ body::-webkit-scrollbar {
 }
 
 .background-section-checkout {
-  background-image: linear-gradient(to top, #f786b3, #ff959b, #ffab88, #ffc67e, #f7e185);
+  background-color: #FBC109;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -719,12 +719,49 @@ body::-webkit-scrollbar {
   background-color: white;
   height: 70%;
   width: 70%;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 9px;
+}
+
+.location-for-checkout {
+  position: absolute;
+  top: 8%;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.agent-assigned {
+  position: absolute;
+  left: 45px;
+  top: 50%;
+}
+
+.travellers-company {
+  position: absolute;
+  left: 45px;
+  top: 55%;
+}
+
+.event-id {
+  position: absolute;
+  left: 45px;
+  top: 80%;
+}
+
+.traveller-id {
+  position: absolute;
+  left: 45px;
+  top: 85%;
+}
+
+.main-div-activities {
+  position: absolute;
+  top: 20%;
 }
 
 .header-checkout {

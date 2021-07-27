@@ -14,12 +14,12 @@ const CheckoutPage = () => {
             <div className="checkout-container">
                 <p className="border-warning border-bottom border-2 location-data-header">Location:</p>
                 <p className="border-warning border-bottom border-2 details-data-header">Details:</p>
-                {infos && <p>ID Assigned agent: {infos[0].event.agent} </p> }
-                {infos && <p>Location: {infos[0].event.location} </p> }
-                {infos && <p>Travellers: {infos[0].event.number} </p> }
-                {infos && <p>Event ID: {infos[0].event._id} </p> }
-                {infos && <p>Traveller ID: {infos[0].event.traveller} </p> }
-                {infos && <p>Activities: {infos[0].activities.map( activity => {return  <p> {activity.name} </p> } ) } </p> }
+                {infos && <p className="agent-assigned">Assigned agent ID: {infos[0].event.agent} </p> }
+                {infos && <p className="location-for-checkout">{infos[0].event.location} </p> }
+                {infos && <p className="travellers-company">Travellers: {infos[0].event.number} </p> }
+                {infos && <p className="event-id">Event ID: {infos[0].event._id} </p> }
+                {infos && <p className="traveller-id">Traveller ID: {infos[0].event.traveller} </p> }
+                {infos && <div className="main-div-activities">{infos[0].activities.map( activity => {return  <p> {activity.name} </p> } ) } </div> }
                 <p className="border-warning border-bottom border-2 additional-data-header">Additional Data:</p>
                 <p className="header-checkout">#Vagabond</p>
                 <img className="logo-nav-checkout" src={logo}/>
