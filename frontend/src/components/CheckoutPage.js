@@ -25,9 +25,9 @@ const CheckoutPage = () => {
                 <img className="logo-nav-checkout" src={logo}/>
                 <div className="card-for-checkout">
                     <p>Points</p>
-                    <p>20</p>
-                    <p>Total</p>
-                    <p>325</p>
+                    <p className="points-for-checkout">20</p>
+                    <p className="total-legend-checkout">Total</p>
+                    
                 </div>
             </div>
         </section>
