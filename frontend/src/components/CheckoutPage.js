@@ -20,9 +20,12 @@ const CheckoutPage = () => {
                 </div>
                 <div className="detail-for-checkout p-3">
                     <p className="details-card-header">Details</p>
-                    {infos && <p className="agent-assigned">{infos[0].event.agent} </p> }
-                    {infos && <p className="event-id">{infos[0].event._id} </p> }
-                    {infos && <p className="traveller-id">{infos[0].event.traveller} </p> }
+                    <p className="agent-assigned">Agent ID</p>
+                    {infos && <p>{infos[0].event.agent} </p> }
+                    <p className="event-id">Event ID</p>
+                    {infos && <p>{infos[0].event._id} </p> }
+                    <p className="traveller-id">Traveller ID</p>
+                    {infos && <p>{infos[0].event.traveller} </p> }
                 </div>
                 <div className="card-for-checkout mx-5">
                     <p>Points</p>

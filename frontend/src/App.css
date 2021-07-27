@@ -736,7 +736,9 @@ body::-webkit-scrollbar {
 }
 
 .agent-assigned {
-  
+  margin: 0;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 .travellers-company {
@@ -744,11 +746,15 @@ body::-webkit-scrollbar {
 }
 
 .event-id {
-  
+  margin: 0;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 .traveller-id {
-  
+  margin: 0;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 .location-in-card {
