@@ -23,6 +23,12 @@ const CheckoutPage = () => {
                 <p className="border-warning border-bottom border-2 additional-data-header">Additional Data:</p>
                 <p className="header-checkout">#Vagabond</p>
                 <img className="logo-nav-checkout" src={logo}/>
+                <div className="card-for-checkout">
+                    <p>Points</p>
+                    <p>20</p>
+                    <p>Total</p>
+                    <p>325</p>
+                </div>
             </div>
         </section>
      );
