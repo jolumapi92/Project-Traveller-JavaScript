@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../logo_aircraft.svg'
 import useFetch from './useFetch';
 import {  useParams } from "react-router-dom";
 
 const CheckoutPage = () => {
 
+    const [price, setPrice] = useState(null);
     const { id } = useParams();
     const {data: infos, loading, error} = useFetch('/getAllJourneysFromAnEvent/' + id ) 
 
+    useEffect( ()=> {
+        if(infos) {
+            let sum = 0;
+                infos[0].activities.forEach( element => {
+                    sum += element.points;
+                })
+            const point = 15;
+            setPrice(point * sum)
+        }
+    })
+    
 
     return ( 
         <section className="background-section-checkout">
@@ -28,8 +40,8 @@ const CheckoutPage = () => {
                     {infos && <p>{infos[0].event.traveller} </p> }
                 </div>
                 <div className="card-for-checkout mx-5">
-                    <p>Points</p>
-                    <p className="points-for-checkout">20</p>
+                    <p>Amount to be paid</p>
+                    <p className="points-for-checkout">${price}</p>
                     <p className="total-legend-checkout">Total</p>
                     {infos && <p className="travellers-company">Travellers: {infos[0].event.number} </p> }
                 </div>
