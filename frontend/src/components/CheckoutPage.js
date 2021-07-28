@@ -15,8 +15,9 @@ const CheckoutPage = () => {
                 infos[0].activities.forEach( element => {
                     sum += element.points;
                 })
-            const point = 15;
-            setPrice(point * sum)
+            const point = 12;
+            const company = infos[0].event.number
+            setPrice( (point * sum) * company )
         }
     })
     
