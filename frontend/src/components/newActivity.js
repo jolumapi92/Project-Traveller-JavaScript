@@ -20,7 +20,7 @@ const CreateActivity = () => {
             body: JSON.stringify(activity)
         }).then( () => {
             console.log('New activity added');
-            history.push('/')
+            history.push('/allActivities')
         }).catch((err)=> {
             console.log(err)
         })
