@@ -16,6 +16,7 @@ const MyJourneys = () => {
     useEffect(() => {
         if(elements === null) {
             setIncomingData(null)
+            setPoints(null)
         } else {
             setIncomingData(elements)
             let sum = 0;
@@ -35,9 +36,9 @@ const MyJourneys = () => {
                     {loading && <p className="text-dark">Loading</p> }
                     { incomingData && incomingData[0].activities.map( element => {return <p>{element.name}</p>  } ) }
                     { !incomingData && <p className="legend-not-found">Nothing found...Please select the activities you'd like to include. Click on your boarding pass!</p> }
-                <p className="points-legend-1">{points}</p>
+                { points && <p className="points-legend-1">{points}</p>}
                 { points && <p className="points-legend">Puntos</p>}
-                <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>
+                { points && <button className="btn checkout-payment-button"><Link to={`/CheckoutAndPayment/${idEvent}`}>Checkout & Pay</Link></button>}
             </div>
             {error && error}
         </section>
