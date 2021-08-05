@@ -87,8 +87,8 @@ const Navbar = () => {
             <div className="container px-4 px-lg-5">
                 <img className="logo-nav mx-3" src={logo}/>
                 { !user && !traveller && <Link className="text-decoration-none" to="/"><h4 className="border-bottom border-warning border-4 text-decoration-none" ><strong>V</strong>agabond</h4></Link> }
-                { user && <Link to="/"><h4 className="border-bottom border-warning border-1">Vagabond: Welcome { user } !</h4></Link> }
-                { traveller && <Link to="/"><h4 className="border-bottom border-warning border-1" >Vagabond: Welcome { traveller } !</h4></Link> }
+                { user && <Link to="/"><h4 className="border-bottom border-warning border-1">Vagabond:</h4> <h5>Welcome { user } !</h5> </Link> }
+                { traveller && <Link to="/"><h4 className="border-bottom border-warning border-1" >Vagabond:</h4> <h5>Welcome { traveller } !</h5></Link> }
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto">
                         { loading && <button className="btn btn-danger mx-3">Loading...please wait</button> }
