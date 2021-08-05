@@ -2,12 +2,16 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 
+
+
 const NewBooking = () => {
     const history = useHistory();
 
     const [location, setLocation] = useState('Tulum');
     const [agent, setAgent] = useState('60c7c4df6650ae270c4aba1a');
     const [number, setNumber] = useState('');
+    
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,7 +23,7 @@ const NewBooking = () => {
             body: JSON.stringify(booking)
         }).then( () => {
             console.log('New booking added');
-            history.push('/Allbookings')
+            history.push('/');
             window.location.reload();
         }).catch((err)=> {
             console.log(err)
