@@ -51,8 +51,8 @@ const NewBooking = () => {
                 required
                 onChange={ (event) => { setAgent(event.target.value) } }
                 >
-                    <option value="60c7c4df6650ae270c4aba1a">Alejandra</option>
-                    <option value="60c7c5e383bd9227886f49ea">Mario</option>
+                    <option value="60c7c4df6650ae270c4aba1a">Female</option>
+                    <option value="60c7c5e383bd9227886f49ea">Male</option>
                 </select>
                 <label>How many will join your journey?</label>
                 <input
