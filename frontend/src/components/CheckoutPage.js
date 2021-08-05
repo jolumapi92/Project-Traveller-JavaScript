@@ -7,7 +7,7 @@ const CheckoutPage = () => {
 
     const [price, setPrice] = useState(null);
     const { id } = useParams();
-    const {data: infos, loading, error} = useFetch('/getAllJourneysFromAnEvent/' + id ) 
+    const {data: infos} = useFetch('/getAllJourneysFromAnEvent/' + id ) 
 
     useEffect( ()=> {
         if(infos) {

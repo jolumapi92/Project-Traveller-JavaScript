@@ -7,7 +7,7 @@ const FormBookingEvent = () => {
     const history = useHistory();
     const { id } = useParams();
     const idEvent = id
-    const { data: activities, loading, error } = useFetch('/eventActivities/' + id);
+    const { data: activities } = useFetch('/eventActivities/' + id);
     const [collectedActivities, setCollectedActivities] = useState([]);
     const [selectedDate, setSelectedDate] = useState(null);
 

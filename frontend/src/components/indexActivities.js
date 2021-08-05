@@ -1,10 +1,9 @@
 import useFetch from './useFetch';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const ActivitiesIndex = () => {
     const { data: activities , loading, error } = useFetch('/activities');
-    const [background, setBackground] = useState(null);
 
     try {
         const usingImages = () => {
@@ -29,8 +28,6 @@ const ActivitiesIndex = () => {
         }
     }).then((res) => res.json()).then(data => {
         console.log(data.results[0].urls.full)
-        const imageFound = data.results[3].urls.full
-        setBackground(imageFound);
     })
     })
 

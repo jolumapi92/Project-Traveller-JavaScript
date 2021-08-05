@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 const MyJourneys = () => {
 
-    const [price, setPrice] = useState(null)
+    
     const [incomingData, setIncomingData] = useState(null);
     const [points, setPoints] = useState(null);
     
@@ -23,8 +23,6 @@ const MyJourneys = () => {
             sum += element.points; 
         })
         setPoints(sum)
-        const finalPrice = sum * 15;
-        setPrice(finalPrice)
         }
     })
     
